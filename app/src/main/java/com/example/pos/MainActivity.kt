@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Log.i("Splash Screen", "OnCreate: Splash Screen.\n")
         /* Window Manager hides the action bar from the top of the screen. */
 
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
@@ -35,5 +36,40 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent) /* Starting the new Activity. */
             finish() /* Preventing the user from returning to the Splash Screen. */
         }, 5000.toLong()) /* The Splash Screen Appears for five seconds. */
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("Splash Screen", "OnStart: Splash Screen.\n")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Log.i("Splash Screen", "OnRestoreInstanceState: Splash Screen.\n")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("Splash Screen", "OnResume: Splash Screen.\n")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("Splash Screen", "OnPause: Splash Screen.\n")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("Splash Screen", "OnStop: Splash Screen.\n")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("Splash Screen", "OnDestroy: Splash Screen.\n")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("Splash Screen", "OnRestart: Splash Screen.\n")
     }
 }
