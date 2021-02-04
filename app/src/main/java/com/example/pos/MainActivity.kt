@@ -14,11 +14,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("Splash Screen", "OnCreate: Splash Screen.\n")
+
         /* Window Manager hides the action bar from the top of the screen. */
 
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_main)
+        Log.i("Splash Screen", "OnCreate: Splash Screen.\n") /* Printing onCreate() to Logcat. */
 
         /* Declaring Variables to store Splash Screen Logo & Text. Also storing the animation. */
 
@@ -38,36 +39,43 @@ class MainActivity : AppCompatActivity() {
         }, 5000.toLong()) /* The Splash Screen Appears for five seconds. */
     }
 
+    /* Printing onStart() to Logcat. */
     override fun onStart() {
         super.onStart()
         Log.i("Splash Screen", "OnStart: Splash Screen.\n")
     }
 
+    /* Printing onRestoreInstanceState() to Logcat. */
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         Log.i("Splash Screen", "OnRestoreInstanceState: Splash Screen.\n")
     }
 
+    /* Printing onResume() to Logcat. */
     override fun onResume() {
         super.onResume()
         Log.i("Splash Screen", "OnResume: Splash Screen.\n")
     }
 
+    /* Printing onPause() to Logcat. */
     override fun onPause() {
         super.onPause()
         Log.i("Splash Screen", "OnPause: Splash Screen.\n")
     }
 
+    /* Printing onStop() to Logcat. */
     override fun onStop() {
         super.onStop()
         Log.i("Splash Screen", "OnStop: Splash Screen.\n")
     }
 
+    /* Printing onDestroy() to Logcat. */
     override fun onDestroy() {
         super.onDestroy()
         Log.i("Splash Screen", "OnDestroy: Splash Screen.\n")
     }
 
+    /* Printing onRestart() to Logcat. */
     override fun onRestart() {
         super.onRestart()
         Log.i("Splash Screen", "OnRestart: Splash Screen.\n")
