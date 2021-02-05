@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent) /* Starting the new Activity. */
             finish() /* Preventing the user from returning to the Splash Screen. */
         }, 5000.toLong()) /* The Splash Screen Appears for five seconds. */
-    }
+    } /* Ending onCreate. */
 
     /* Printing onStart() to Logcat. */
     override fun onStart() {
@@ -80,4 +80,4 @@ class MainActivity : AppCompatActivity() {
         super.onRestart()
         Log.i("Splash Screen", "OnRestart: Splash Screen.\n")
     }
-}
+} /* Ending class. */

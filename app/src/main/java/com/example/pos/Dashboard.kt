@@ -14,13 +14,13 @@ class Dashboard : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        val userId = intent.getStringExtra("user_id")
-        val emailId = intent.getStringExtra("email_id")
+        val userId = intent.getStringExtra("userID")
+        val emailId = intent.getStringExtra("nameID")
 
-        tv_user_id.text = "User ID :: $userId"
-        tv_email_id.text = "Email ID :: $emailId"
+        //tv_user_id.text = "User ID :: $userId"
+        userID.text = "$emailId"
 
-        btn_logout.setOnClickListener {
+        userID.setOnClickListener {
             //Logout from app.
             FirebaseAuth.getInstance().signOut()
 
