@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         /* Calling the new Activity. */
         Handler().postDelayed({
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, Dashboard::class.java)
             startActivity(intent) /* Starting the new Activity. */
             finish() /* Preventing the user from returning to the Splash Screen. */
         }, 5000.toLong()) /* The Splash Screen Appears for five seconds. */

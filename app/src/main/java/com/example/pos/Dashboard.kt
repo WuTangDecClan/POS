@@ -17,8 +17,8 @@ class Dashboard : AppCompatActivity() {
         val userId = intent.getStringExtra("userID")
         val emailId = intent.getStringExtra("nameID")
 
-        //tv_user_id.text = "User ID :: $userId"
-        userID.text = "$emailId"
+        userDetails.text = "User ID :: $userId"
+        userDetails.text = "$emailId"
 
         userID.setOnClickListener {
             //Logout from app.
@@ -26,6 +26,12 @@ class Dashboard : AppCompatActivity() {
 
             startActivity(Intent(this@Dashboard, LoginActivity::class.java))
             finish()
+        }
+
+        customersButton.setOnClickListener {
+            val intent = Intent(this@Dashboard, CustomerActivity::class.java)  /* Creating an Intent to go to Dashboard. */
+            startActivity(intent) /* Starting Activity. */
+
         }
     }
 
