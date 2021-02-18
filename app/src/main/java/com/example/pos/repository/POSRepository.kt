@@ -1,6 +1,8 @@
-package com.example.pos.data
+package com.example.pos.repository
 
 import androidx.lifecycle.LiveData
+import com.example.pos.data.POSDao
+import com.example.pos.model.Customer
 
 /* A class that abstracts access to multiple data sources. */
 // Declares the DAO as a private property in the constructor. Pass in the DAO
@@ -17,5 +19,13 @@ class POSRepository(private val POSDao: POSDao) {
 
     suspend fun addCustomer(customer: Customer) {
         POSDao.addCustomer(customer) /*Accessing from User Dao. */
+    }
+
+    suspend fun updateCustomer(customer: Customer) {
+        POSDao.updateCustomer(customer)
+    }
+
+    suspend fun deleteCustomer(customer: Customer) {
+        POSDao.deleteCustomer(customer)
     }
 }

@@ -7,25 +7,25 @@
     tools:context=".listFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/recyclerview"
+        android:layout_width="751dp"
+        android:layout_height="709dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="307dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/button"
+        android:text="Add Customer"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:tint="@color/white"
-        android:src="@drawable/curve"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

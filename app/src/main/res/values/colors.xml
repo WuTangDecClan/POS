@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="shopColour">#881b32</color>
     <color name="logoYellow">#fcac52</color>
+    <color name="dialogButtonText">#008577</color>
 </resources>

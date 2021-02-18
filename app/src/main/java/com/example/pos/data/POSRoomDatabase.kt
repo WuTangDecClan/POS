@@ -4,13 +4,14 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.pos.model.Customer
 
 /* Contains the database holder and serves as the main access point for the
  underlying connection to your app's persisted, relational data.
  */
 /* Ctrl + Q. */
 // Annotates class to be a Room Database with a table (entity) of the Word class
-@Database(entities = [Customer::class], version = 1, exportSchema = true)
+@Database(entities = [Customer::class], version = 1, exportSchema = false)
 public abstract class POSRoomDatabase: RoomDatabase() {
 
     abstract fun POSDao(): POSDao

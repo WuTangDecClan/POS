@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addFragment">
+    android:padding="24dp"
+    tools:context=".fragments.update.UpdateFragment">
 
     <EditText
-        android:id="@+id/editTextName"
+        android:id="@+id/updateTextName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
@@ -19,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/updateTextNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="15"
@@ -27,10 +28,10 @@
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+        app:layout_constraintTop_toBottomOf="@+id/updateTextName" />
 
     <EditText
-        android:id="@+id/editTextPostalAddress"
+        android:id="@+id/updatePostalAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -39,10 +40,10 @@
         android:inputType="textPostalAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/updateTextNumber" />
 
     <EditText
-        android:id="@+id/editTextTextAddress"
+        android:id="@+id/updateTextAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="15"
@@ -51,20 +52,38 @@
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPostalAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/updatePostalAddress" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/add_btn"
+        android:id="@+id/updateBtn"
         android:layout_width="307dp"
         android:layout_height="68dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/button"
-        android:text="Add"
+        android:text="Update Customer"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/updateTextAddress" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/deleteBtn"
+        android:layout_width="307dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="300dp"
+        android:background="@drawable/button"
+        android:text="Delete Customer"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/updateBtn"
+        app:layout_constraintTop_toBottomOf="@+id/updateTextAddress" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

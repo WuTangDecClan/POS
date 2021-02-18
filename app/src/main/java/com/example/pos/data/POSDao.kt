@@ -1,10 +1,8 @@
 package com.example.pos.data
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
+import com.example.pos.model.Customer
 
 /* Contains the methods used for accessing the database. */
 @Dao
@@ -18,4 +16,10 @@ interface POSDao {
 
     @Query("DELETE FROM customer_table")
     suspend fun deleteAll()
+
+    @Delete
+    suspend fun deleteCustomer(customer: Customer)
+
+    @Update
+    suspend fun updateCustomer(customer: Customer)
 }
