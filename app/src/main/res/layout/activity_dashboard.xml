@@ -118,6 +118,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/ordersButton"
             android:layout_width="225dp"
             android:layout_height="225dp"
             android:layout_row="0"

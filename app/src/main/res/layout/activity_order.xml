@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderActivity">
+
+    <Button
+        android:id="@+id/customerButton"
+        android:layout_width="142dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Customer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/sideOrderSwitch"
+        android:layout_width="128dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Side Orders"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerButton" />
+
+
+    <Button
+        android:id="@+id/dealOneButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="72dp"
+        android:text="Deal One"
+        app:layout_constraintStart_toEndOf="@+id/customerButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dealTwoButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="72dp"
+        android:text="Deal Two"
+        app:layout_constraintStart_toEndOf="@+id/dealOneButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dealThreeButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="72dp"
+        android:text="Deal Three"
+        app:layout_constraintStart_toEndOf="@+id/dealTwoButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dealMaxButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="20dp"
+        android:text="Deal Max"
+        app:layout_constraintStart_toEndOf="@+id/dealThreeButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/cancelOrderButton"
+        android:layout_width="142dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
+        android:text="Cancel Order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/margButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Margherita"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sideOrderSwitch" />
+
+    <Button
+        android:id="@+id/americanButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:text="American"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/margButton"
+        app:layout_constraintTop_toBottomOf="@+id/dealOneButton" />
+
+    <Button
+        android:id="@+id/HawaiianButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:text="Hawaiian"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/americanButton"
+        app:layout_constraintTop_toBottomOf="@+id/dealTwoButton" />
+
+    <Button
+        android:id="@+id/romanaButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:text="Romana"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/HawaiianButton"
+        app:layout_constraintTop_toBottomOf="@+id/dealThreeButton" />
+
+    <Button
+        android:id="@+id/cheese4Button"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:text="4 Cheeses"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/romanaButton"
+        app:layout_constraintTop_toBottomOf="@+id/dealMaxButton" />
+
+    <Button
+        android:id="@+id/polloButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Pollo"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/margButton" />
+
+    <Button
+        android:id="@+id/melanzanaButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Melanzana"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/polloButton"
+        app:layout_constraintTop_toBottomOf="@+id/americanButton" />
+
+    <Button
+        android:id="@+id/vegButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Veg Pizza"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/melanzanaButton"
+        app:layout_constraintTop_toBottomOf="@+id/HawaiianButton" />
+
+    <Button
+        android:id="@+id/quarryButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Quarry"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/vegButton"
+        app:layout_constraintTop_toBottomOf="@+id/romanaButton" />
+
+    <Button
+        android:id="@+id/whiteRockButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="White Rock"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/quarryButton"
+        app:layout_constraintTop_toBottomOf="@+id/cheese4Button" />
+
+    <Button
+        android:id="@+id/sorrentoButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Sorrento"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/polloButton" />
+
+    <Button
+        android:id="@+id/dylanParkButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Dylan's Park"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/sorrentoButton"
+        app:layout_constraintTop_toBottomOf="@+id/melanzanaButton" />
+
+    <Button
+        android:id="@+id/coliemoreButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Coliemore Harbour"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/dylanParkButton"
+        app:layout_constraintTop_toBottomOf="@+id/vegButton" />
+
+    <Button
+        android:id="@+id/bullockButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Bullock Harbour"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/coliemoreButton"
+        app:layout_constraintTop_toBottomOf="@+id/quarryButton" />
+
+    <Button
+        android:id="@+id/fortyFootButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="40 Foot"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/bullockButton"
+        app:layout_constraintTop_toBottomOf="@+id/whiteRockButton" />
+
+    <Button
+        android:id="@+id/catsButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Cat's Ladder"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sorrentoButton" />
+
+    <Button
+        android:id="@+id/killineyHillButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Killiney Hill"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/catsButton"
+        app:layout_constraintTop_toBottomOf="@+id/dylanParkButton" />
+
+    <Button
+        android:id="@+id/killineyBeachButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Killiney Beach"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/killineyHillButton"
+        app:layout_constraintTop_toBottomOf="@+id/coliemoreButton" />
+
+    <Button
+        android:id="@+id/castleButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="The Castle"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/killineyBeachButton"
+        app:layout_constraintTop_toBottomOf="@+id/bullockButton" />
+
+    <Button
+        android:id="@+id/martelloButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Martello Tower"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/castleButton"
+        app:layout_constraintTop_toBottomOf="@+id/fortyFootButton" />
+
+    <Button
+        android:id="@+id/loretoButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Loreto"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/catsButton" />
+
+    <Button
+        android:id="@+id/vicoButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Vico"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/loretoButton"
+        app:layout_constraintTop_toBottomOf="@+id/killineyHillButton" />
+
+    <Button
+        android:id="@+id/hydeParkButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Hyde Park"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/vicoButton"
+        app:layout_constraintTop_toBottomOf="@+id/killineyBeachButton" />
+
+    <Button
+        android:id="@+id/calzoneProButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Calzone Prosciutto"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/hydeParkButton"
+        app:layout_constraintTop_toBottomOf="@+id/castleButton" />
+
+    <Button
+        android:id="@+id/calzoneVegButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Calzone Veggie"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/calzoneProButton"
+        app:layout_constraintTop_toBottomOf="@+id/martelloButton" />
+
+    <Button
+        android:id="@+id/dalkeyStationButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Dalkey Station"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loretoButton" />
+
+    <Button
+        android:id="@+id/monthlyButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Monthly Pizza"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/dalkeyStationButton"
+        app:layout_constraintTop_toBottomOf="@+id/vicoButton" />
+
+    <Button
+        android:id="@+id/focacciaButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Focaccia Bread"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/monthlyButton"
+        app:layout_constraintTop_toBottomOf="@+id/hydeParkButton" />
+
+    <Button
+        android:id="@+id/pestoButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Pesto Bread"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/focacciaButton"
+        app:layout_constraintTop_toBottomOf="@+id/calzoneProButton" />
+
+    <Button
+        android:id="@+id/cyoButton"
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Create Your Own"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/pestoButton"
+        app:layout_constraintTop_toBottomOf="@+id/calzoneVegButton" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/foodRecyclerView"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:layout_width="402dp"
+        android:layout_height="575dp"
+        tools:listitem="@layout/food_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fortyFootButton"
+        app:layout_constraintTop_toBottomOf="@+id/cancelOrderButton" />
+
+    <LinearLayout
+        android:id="@+id/recyclerviewButtons"
+        android:layout_width="402dp"
+        android:layout_height="100dp"
+        android:paddingTop="10dp"
+        android:padding="6dp"
+        android:clipToPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.677"
+        app:layout_constraintStart_toEndOf="@+id/cyoButton"
+        app:layout_constraintTop_toBottomOf="@+id/foodRecyclerView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Insert Item"
+            android:onClick="insertItem"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Remove Item"
+            android:onClick="removeItem"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
