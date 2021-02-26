@@ -22,4 +22,7 @@ interface POSDao {
 
     @Update
     suspend fun updateCustomer(customer: Customer)
+
+    @Query("SELECT * FROM customer_table WHERE name LIKE :searchQuery OR address LIKE :searchQuery OR mobile LIKE :searchQuery")
+    fun searchDatabase(searchQuery: String): LiveData<List<Customer>>
 }

@@ -11,31 +11,55 @@
         android:layout_width="751dp"
         android:layout_height="709dp"
         android:layout_marginTop="32dp"
+        android:clipToPadding="false"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton" />
+        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton"
+        tools:listitem="@layout/custom_row" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/floatingActionButton"
         android:layout_width="307dp"
         android:layout_height="68dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="268dp"
         android:background="@drawable/pizaa_button2"
         android:text="Add Customer"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <SearchView
         android:id="@+id/customerSearchView"
-        android:layout_width="218dp"
-        android:layout_height="0dp"
+        android:layout_width="364dp"
+        android:layout_height="43dp"
         android:layout_margin="16dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="72dp"
-        app:layout_constraintStart_toEndOf="@+id/floatingActionButton"
+        android:background="@drawable/custom_search_background"
+        android:commitIcon="@drawable/searchlogo_foreground"
+        app:queryHint="Search for a Customer"
+        app:defaultQueryHint="Search for a Customer"
+        app:layout_constraintBottom_toBottomOf="@+id/floatingActionButton"
+        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/customerSearchView"
+        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
+        app:layout_constraintStart_toStartOf="@+id/customerSearchView"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

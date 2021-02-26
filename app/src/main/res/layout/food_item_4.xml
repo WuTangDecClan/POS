@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardViewItem4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="4dp"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="8dp"
+    app:cardPreventCornerOverlap="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/productQuantityView4"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="15dp"
+            android:text="1"
+            android:textColor="@color/shopColour"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/productNameView4"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@+id/productQuantityView4"
+            android:text="12'' Killiney Beach"
+            android:textColor="@color/shopColour"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/productPriceView4"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@id/productNameView4"
+            android:text="14.50"
+            android:textColor="@color/shopColour"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/topping1View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/productPriceView4"
+            android:text="Pepperoni"
+            android:textColor="@color/logoYellow"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/topping2View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topping1View"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/productPriceView4"
+            android:text="Aubergine"
+            android:textColor="@color/logoYellow"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/topping3View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/topping1View"
+            android:text="Semi Dried Tomatos"
+            android:textColor="@color/logoYellow"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/topping4View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topping1View"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/topping2View"
+            android:text="Smoked Applewood"
+            android:textColor="@color/logoYellow"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

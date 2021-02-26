@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rowConstraintLayout"
     android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content" >
 
     <androidx.cardview.widget.CardView
@@ -27,20 +27,22 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
                 android:text="Name"
-                android:textSize="24sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
+                android:textColor="@color/shopColour"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/address1View"
+                android:id="@+id/mobileView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:text="Address Line 1"
-                android:textSize="24sp"
+                android:layout_marginTop="32dp"
+                android:text="Mobile Number"
+                android:textSize="25sp"
                 android:textStyle="bold"
+                android:textColor="@color/shopColour"
                 app:layout_constraintStart_toEndOf="@+id/nameView"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,20 +53,22 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
                 android:text="Eircode"
-                android:textSize="24sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/address1View"
+                android:textColor="@color/shopColour"
+                app:layout_constraintStart_toEndOf="@+id/mobileView"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/mobileView"
+                android:id="@+id/address1View"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="32dp"
-                android:text="Mobile Number"
-                android:textSize="24sp"
+                android:text="Address"
+                android:textSize="25sp"
                 android:textStyle="bold"
+                android:textColor="@color/logoYellow"
                 app:layout_constraintStart_toEndOf="@+id/eircodeView"
                 app:layout_constraintTop_toTopOf="parent" />
 

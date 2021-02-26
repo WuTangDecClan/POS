@@ -8,33 +8,33 @@
 
     <Button
         android:id="@+id/customerButton"
-        android:layout_width="142dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="24dp"
+        android:layout_width="175dp"
+        android:layout_height="75dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="65dp"
         android:text="Customer"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancelOrderButton"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <Switch
         android:id="@+id/sideOrderSwitch"
         android:layout_width="128dp"
         android:layout_height="45dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="95dp"
         android:text="Side Orders"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerButton" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/dealOneButton"
         android:layout_width="132dp"
         android:layout_height="71dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="72dp"
         android:text="Deal One"
-        app:layout_constraintStart_toEndOf="@+id/customerButton"
+        app:layout_constraintStart_toEndOf="@+id/sideOrderSwitch"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -70,8 +70,8 @@
 
     <Button
         android:id="@+id/cancelOrderButton"
-        android:layout_width="142dp"
-        android:layout_height="56dp"
+        android:layout_width="165dp"
+        android:layout_height="75dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
         android:text="Cancel Order"
@@ -80,10 +80,11 @@
 
     <Button
         android:id="@+id/margButton"
+        android:onClick="insertItem"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="40dp"
         android:text="Margherita"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -137,7 +138,7 @@
         android:id="@+id/polloButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="34dp"
         android:layout_marginTop="36dp"
         android:text="Pollo"
         android:textSize="12sp"
@@ -247,7 +248,7 @@
         android:id="@+id/catsButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="34dp"
         android:layout_marginTop="36dp"
         android:text="Cat's Ladder"
         android:textSize="12sp"
@@ -357,7 +358,7 @@
         android:id="@+id/dalkeyStationButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="34dp"
         android:layout_marginTop="36dp"
         android:text="Dalkey Station"
         android:textSize="12sp"
@@ -410,15 +411,16 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/foodRecyclerView"
-        android:padding="8dp"
-        android:clipToPadding="false"
-        android:layout_width="402dp"
+        android:layout_width="633dp"
         android:layout_height="575dp"
-        tools:listitem="@layout/food_item"
+        android:clipToPadding="false"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/fortyFootButton"
-        app:layout_constraintTop_toBottomOf="@+id/cancelOrderButton" />
+        app:layout_constraintTop_toBottomOf="@+id/cancelOrderButton"
+        tools:listitem="@layout/food_item" />
 
     <LinearLayout
         android:id="@+id/recyclerviewButtons"
