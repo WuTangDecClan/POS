@@ -80,7 +80,6 @@
 
     <Button
         android:id="@+id/margButton"
-        android:onClick="insertItem"
         android:layout_width="133dp"
         android:layout_height="70dp"
         android:layout_marginStart="28dp"
@@ -410,16 +409,21 @@
         app:layout_constraintTop_toBottomOf="@+id/calzoneVegButton" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/foodRecyclerView"
-        android:layout_width="633dp"
-        android:layout_height="575dp"
+        android:id="@+id/orderRecyclerView"
+        android:layout_width="439dp"
+        android:layout_height="562dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
         android:clipToPadding="false"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toEndOf="@+id/fortyFootButton"
         app:layout_constraintTop_toBottomOf="@+id/cancelOrderButton"
+        app:layout_constraintVertical_bias="0.243"
         tools:listitem="@layout/food_item" />
 
     <LinearLayout
@@ -433,23 +437,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.677"
         app:layout_constraintStart_toEndOf="@+id/cyoButton"
-        app:layout_constraintTop_toBottomOf="@+id/foodRecyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/orderRecyclerView"
         app:layout_constraintVertical_bias="0.0">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Insert Item"
-            android:onClick="insertItem"/>
+            android:text="Insert Item" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Remove Item"
-            android:onClick="removeItem"/>
+            android:text="Remove Item" />
     </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--android:onClick="insertItem" -->
