@@ -20,12 +20,9 @@ class Dashboard : AppCompatActivity() {
         userDetails.text = "User ID :: $userId"
         userDetails.text = "$emailId"
 
-        userID.setOnClickListener {
-            //Logout from app.
-            FirebaseAuth.getInstance().signOut()
-
-            startActivity(Intent(this@Dashboard, LoginActivity::class.java))
-            finish()
+        garysImageView.setOnClickListener {
+            val intent = Intent(this@Dashboard, Dashboard::class.java)  /* Creating an Intent to go to Dashboard. */
+            startActivity(intent) /* Starting Activity. */
         }
 
         customersButton.setOnClickListener {
@@ -41,7 +38,12 @@ class Dashboard : AppCompatActivity() {
         }
 
         ordersButton.setOnClickListener {
-            val intent = Intent(this@Dashboard, LoginActivity::class.java)  /* Creating an Intent to go to Dashboard. */
+            val intent = Intent(this@Dashboard, ActiveOrderActivity::class.java)  /* Creating an Intent to go to Dashboard. */
+            startActivity(intent) /* Starting Activity. */
+        }
+
+        managementButton.setOnClickListener {
+            val intent = Intent(this@Dashboard, ManagementActivity::class.java)  /* Creating an Intent to go to Dashboard. */
             startActivity(intent) /* Starting Activity. */
         }
     }

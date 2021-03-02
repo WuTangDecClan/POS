@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dashboard"
+    tools:context=".ManagementActivity"
     android:background="@color/white"
     android:focusable="true"
     android:focusableInTouchMode="true">
@@ -53,13 +53,13 @@
         app:layout_constraintVertical_bias="0.455">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/customersButton"
+            android:id="@+id/salesButton"
             android:layout_width="225dp"
             android:layout_height="225dp"
             android:layout_row="0"
             android:layout_column="0"
-            android:layout_marginLeft="88dp"
-            app:cardBackgroundColor="@color/shopColour"
+            android:layout_marginLeft="180dp"
+            app:cardBackgroundColor="@color/logoYellow"
             app:cardCornerRadius="30dp"
             app:cardElevation="10dp">
 
@@ -72,13 +72,13 @@
                 <ImageView
                     android:layout_width="145dp"
                     android:layout_height="120dp"
-                    android:src="@drawable/contactlogo_foreground" />
+                    android:src="@drawable/sales_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/googlesansfont"
-                    android:text="Customers"
+                    android:text="View Sales"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
 
@@ -86,13 +86,13 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/placeOrderButton"
+            android:id="@+id/endDayButton"
             android:layout_width="225dp"
             android:layout_height="225dp"
             android:layout_row="0"
             android:layout_column="0"
-            android:layout_marginLeft="380dp"
-            app:cardBackgroundColor="@color/shopColour"
+            android:layout_marginLeft="515dp"
+            app:cardBackgroundColor="@color/logoYellow"
             app:cardCornerRadius="30dp"
             app:cardElevation="10dp">
 
@@ -105,13 +105,13 @@
                 <ImageView
                     android:layout_width="145dp"
                     android:layout_height="120dp"
-                    android:src="@drawable/orderlogo_foreground" />
+                    android:src="@drawable/end_sales_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/googlesansfont"
-                    android:text="Place Order"
+                    android:text="End of Day Sales"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
 
@@ -119,13 +119,13 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/ordersButton"
+            android:id="@+id/logoutButton"
             android:layout_width="225dp"
             android:layout_height="225dp"
             android:layout_row="0"
             android:layout_column="0"
-            android:layout_marginLeft="660dp"
-            app:cardBackgroundColor="@color/shopColour"
+            android:layout_marginLeft="860dp"
+            app:cardBackgroundColor="@color/logoYellow"
             app:cardCornerRadius="30dp"
             app:cardElevation="10dp">
 
@@ -138,46 +138,13 @@
                 <ImageView
                     android:layout_width="145dp"
                     android:layout_height="120dp"
-                    android:src="@drawable/tabslogo_foreground" />
+                    android:src="@drawable/logout_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/googlesansfont"
-                    android:text="Current Orders"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/managementButton"
-            android:layout_width="225dp"
-            android:layout_height="225dp"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_marginLeft="950dp"
-            app:cardBackgroundColor="@color/shopColour"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="145dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/managementlogo_foreground" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/googlesansfont"
-                    android:text="Management"
+                    android:text="Logout"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
 
