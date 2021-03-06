@@ -3,12 +3,13 @@ package com.example.pos.data
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.pos.model.Customer
+import com.example.pos.model.Order
 
 /* Contains the methods used for accessing the database. */
-@Dao
+@Dao /* Data Access Object. */
 interface POSDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) /*If there is a duplicate then replace the previous. */
     suspend fun addCustomer(customer: Customer)
 
     @Query("SELECT * FROM customer_table ORDER BY id ASC")
@@ -25,4 +26,10 @@ interface POSDao {
 
     @Query("SELECT * FROM customer_table WHERE name LIKE :searchQuery OR address LIKE :searchQuery OR mobile LIKE :searchQuery")
     fun searchDatabase(searchQuery: String): LiveData<List<Customer>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun addOrder(order: Order)
+
+    @Query("SELECT * FROM order_table ORDER BY id ASC")
+    fun readAllOrder(): LiveData<List<Order>>
 }

@@ -6,140 +6,181 @@
     android:layout_height="match_parent"
     tools:context=".OrderActivity">
 
-    <Button
-        android:id="@+id/customerButton"
-        android:layout_width="175dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="65dp"
-        android:text="Customer"
-        app:layout_constraintEnd_toStartOf="@+id/cancelOrderButton"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <Switch
-        android:id="@+id/sideOrderSwitch"
-        android:layout_width="128dp"
-        android:layout_height="45dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/deliveryChargeButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="95dp"
-        android:text="Side Orders"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/pizaa_button3"
+        android:text="Delivery Charge"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/customerButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/pizaa_button3"
+        android:text="Customer"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/deliveryChargeButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dealOneButton"
         android:layout_width="132dp"
         android:layout_height="71dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/pizaa_button4"
         android:text="Deal One"
-        app:layout_constraintStart_toEndOf="@+id/sideOrderSwitch"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/customerButton"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dealTwoButton"
         android:layout_width="132dp"
         android:layout_height="71dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/pizaa_button4"
         android:text="Deal Two"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/dealOneButton"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dealThreeButton"
         android:layout_width="132dp"
         android:layout_height="71dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/pizaa_button4"
         android:text="Deal Three"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/dealTwoButton"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/dealMaxButton"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/openFoodButton"
         android:layout_width="132dp"
         android:layout_height="71dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="20dp"
-        android:text="Deal Max"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/pizaa_button2"
+        android:text="Open Food Item"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/dealThreeButton"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/cancelOrderButton"
-        android:layout_width="165dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/pizaa_button3"
         android:text="Cancel Order"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textPizzaClassicView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Classic Pizzas"
+        android:textColor="@color/logoBrown"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deliveryChargeButton" />
 
     <Button
         android:id="@+id/margButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="40dp"
-        android:text="Margherita"
+        android:layout_marginTop="12dp"
+        android:text="Margherita Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sideOrderSwitch" />
+        app:layout_constraintTop_toBottomOf="@+id/textPizzaClassicView" />
 
     <Button
         android:id="@+id/americanButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
-        android:text="American"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="American Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/margButton"
-        app:layout_constraintTop_toBottomOf="@+id/dealOneButton" />
+        app:layout_constraintTop_toBottomOf="@+id/textPizzaClassicView" />
 
     <Button
         android:id="@+id/HawaiianButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
-        android:text="Hawaiian"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="44dp"
+        android:text="Hawaiian Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/americanButton"
-        app:layout_constraintTop_toBottomOf="@+id/dealTwoButton" />
+        app:layout_constraintTop_toTopOf="@id/textPizzaClassicView" />
+
 
     <Button
         android:id="@+id/romanaButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
-        android:text="Romana"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="44dp"
+        android:text="Romana Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/HawaiianButton"
-        app:layout_constraintTop_toBottomOf="@+id/dealThreeButton" />
+        app:layout_constraintTop_toTopOf="@id/textPizzaClassicView" />
 
     <Button
         android:id="@+id/cheese4Button"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
-        android:text="4 Cheeses"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="44dp"
+        android:text="4 Cheeses Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/romanaButton"
-        app:layout_constraintTop_toBottomOf="@+id/dealMaxButton" />
+        app:layout_constraintTop_toTopOf="@id/textPizzaClassicView" />
 
     <Button
         android:id="@+id/polloButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="36dp"
-        android:text="Pollo"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Pollo Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/margButton" />
@@ -149,8 +190,8 @@
         android:layout_width="133dp"
         android:layout_height="70dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:text="Melanzana"
+        android:layout_marginTop="8dp"
+        android:text="Melanzana Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/polloButton"
         app:layout_constraintTop_toBottomOf="@+id/americanButton" />
@@ -159,97 +200,109 @@
         android:id="@+id/vegButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:text="Veg Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/melanzanaButton"
         app:layout_constraintTop_toBottomOf="@+id/HawaiianButton" />
 
     <Button
-        android:id="@+id/quarryButton"
+        android:id="@+id/calzoneProButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:text="Quarry"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Calzone Prosciutto"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/vegButton"
         app:layout_constraintTop_toBottomOf="@+id/romanaButton" />
 
     <Button
-        android:id="@+id/whiteRockButton"
+        android:id="@+id/calzoneVegButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:text="White Rock"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Calzone Veggie"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/quarryButton"
+        app:layout_constraintStart_toEndOf="@+id/calzoneProButton"
         app:layout_constraintTop_toBottomOf="@+id/cheese4Button" />
+
+    <TextView
+        android:id="@+id/textGourmetPizzaView"
+        android:layout_width="204dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Gourmet Pizzas"
+        android:textColor="@color/logoBrown"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/polloButton" />
 
     <Button
         android:id="@+id/sorrentoButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:text="Sorrento"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:text="Sorrento Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/polloButton" />
+        app:layout_constraintTop_toBottomOf="@+id/textGourmetPizzaView" />
 
     <Button
         android:id="@+id/dylanParkButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="Dylan's Park"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:text="Dylan's Park Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/sorrentoButton"
-        app:layout_constraintTop_toBottomOf="@+id/melanzanaButton" />
+        app:layout_constraintTop_toBottomOf="@+id/textGourmetPizzaView" />
 
     <Button
         android:id="@+id/coliemoreButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="Coliemore Harbour"
+        android:layout_marginTop="4dp"
+        android:text="Coliemore Harbour Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/dylanParkButton"
-        app:layout_constraintTop_toBottomOf="@+id/vegButton" />
+        app:layout_constraintTop_toTopOf="@+id/dylanParkButton" />
 
     <Button
         android:id="@+id/bullockButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="Bullock Harbour"
+        android:layout_marginTop="4dp"
+        android:text="Bullock Harbour Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/coliemoreButton"
-        app:layout_constraintTop_toBottomOf="@+id/quarryButton" />
+        app:layout_constraintTop_toTopOf="@+id/coliemoreButton" />
 
     <Button
         android:id="@+id/fortyFootButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="40 Foot"
+        android:text="40 Foot Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/bullockButton"
-        app:layout_constraintTop_toBottomOf="@+id/whiteRockButton" />
+        app:layout_constraintTop_toTopOf="@+id/bullockButton" />
 
     <Button
         android:id="@+id/catsButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="36dp"
-        android:text="Cat's Ladder"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="Cat's Ladder Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sorrentoButton" />
@@ -258,9 +311,9 @@
         android:id="@+id/killineyHillButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:text="Killiney Hill"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Killiney Hill Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/catsButton"
         app:layout_constraintTop_toBottomOf="@+id/dylanParkButton" />
@@ -269,9 +322,9 @@
         android:id="@+id/killineyBeachButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:text="Killiney Beach"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:text="Killiney Beach Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/killineyHillButton"
         app:layout_constraintTop_toBottomOf="@+id/coliemoreButton" />
@@ -280,9 +333,9 @@
         android:id="@+id/castleButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:text="The Castle"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:text="The Castle Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/killineyBeachButton"
         app:layout_constraintTop_toBottomOf="@+id/bullockButton" />
@@ -291,9 +344,9 @@
         android:id="@+id/martelloButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:text="Martello Tower"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Martello Tower Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/castleButton"
         app:layout_constraintTop_toBottomOf="@+id/fortyFootButton" />
@@ -302,9 +355,9 @@
         android:id="@+id/loretoButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:text="Loreto"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="Loreto Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/catsButton" />
@@ -314,144 +367,595 @@
         android:layout_width="133dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="Vico"
+        android:layout_marginTop="8dp"
+        android:text="Vico Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/loretoButton"
         app:layout_constraintTop_toBottomOf="@+id/killineyHillButton" />
+
 
     <Button
         android:id="@+id/hydeParkButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="Hyde Park"
+        android:layout_marginTop="8dp"
+        android:text="Hyde Park Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/vicoButton"
         app:layout_constraintTop_toBottomOf="@+id/killineyBeachButton" />
 
     <Button
-        android:id="@+id/calzoneProButton"
+        android:id="@+id/quarryButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="Calzone Prosciutto"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="4dp"
+        android:text="Quarry Pizza"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/hydeParkButton"
         app:layout_constraintTop_toBottomOf="@+id/castleButton" />
 
     <Button
-        android:id="@+id/calzoneVegButton"
+        android:id="@+id/whiteRockButton"
         android:layout_width="133dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="Calzone Veggie"
+        android:layout_marginTop="4dp"
+        android:text="White Rock"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/calzoneProButton"
+        app:layout_constraintStart_toEndOf="@+id/quarryButton"
         app:layout_constraintTop_toBottomOf="@+id/martelloButton" />
-
-    <Button
-        android:id="@+id/dalkeyStationButton"
-        android:layout_width="133dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="36dp"
-        android:text="Dalkey Station"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loretoButton" />
-
-    <Button
-        android:id="@+id/monthlyButton"
-        android:layout_width="133dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:text="Monthly Pizza"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/dalkeyStationButton"
-        app:layout_constraintTop_toBottomOf="@+id/vicoButton" />
-
-    <Button
-        android:id="@+id/focacciaButton"
-        android:layout_width="133dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:text="Focaccia Bread"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/monthlyButton"
-        app:layout_constraintTop_toBottomOf="@+id/hydeParkButton" />
-
-    <Button
-        android:id="@+id/pestoButton"
-        android:layout_width="133dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:text="Pesto Bread"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/focacciaButton"
-        app:layout_constraintTop_toBottomOf="@+id/calzoneProButton" />
-
-    <Button
-        android:id="@+id/cyoButton"
-        android:layout_width="133dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:text="Create Your Own"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/pestoButton"
-        app:layout_constraintTop_toBottomOf="@+id/calzoneVegButton" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/orderRecyclerView"
         android:layout_width="439dp"
         android:layout_height="562dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
         android:clipToPadding="false"
         android:padding="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/complete_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
-        app:layout_constraintStart_toEndOf="@+id/fortyFootButton"
         app:layout_constraintTop_toBottomOf="@+id/cancelOrderButton"
-        app:layout_constraintVertical_bias="0.243"
+        app:layout_constraintVertical_bias="0.504"
         tools:listitem="@layout/food_item" />
 
-    <LinearLayout
-        android:id="@+id/recyclerviewButtons"
-        android:layout_width="402dp"
-        android:layout_height="100dp"
-        android:paddingTop="10dp"
-        android:padding="6dp"
-        android:clipToPadding="true"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/complete_btn"
+        android:layout_width="247dp"
+        android:layout_height="84dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/pizaa_button2"
+        android:text="Complete Order"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.677"
-        app:layout_constraintStart_toEndOf="@+id/cyoButton"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTotalPrice"
+        android:layout_width="114dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        android:text="Total Price:"
+        android:textColor="@color/logoBrown"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/complete_btn"
+        app:layout_constraintEnd_toStartOf="@+id/complete_btn"
         app:layout_constraintTop_toBottomOf="@+id/orderRecyclerView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Insert Item" />
+    <TextView
+        android:id="@+id/textViewPrice"
+        android:layout_width="139dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="8dp"
+        android:text="20.00"
+        android:textColor="@color/logoBrown"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/complete_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewTotalPrice"
+        app:layout_constraintTop_toBottomOf="@+id/orderRecyclerView"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <Button
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="787dp"
+        android:layout_height="275dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:fillViewport="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loretoButton">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Remove Item" />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sideOrderView"
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:text="Side Orders and Salads"
+                android:textColor="@color/logoBrown"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bbqWingsButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizza_button1"
+                android:text="BBQ Chicken Wings"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sideOrderView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/wedgesButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizza_button1"
+                android:text="Potato Wedges"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/bbqWingsButton"
+                app:layout_constraintTop_toBottomOf="@+id/sideOrderView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/prawnsButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="26dp"
+                android:background="@drawable/pizza_button1"
+                android:text="Garlic Roasted Prawn"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/wedgesButton"
+                app:layout_constraintTop_toTopOf="@+id/wedgesButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/mexicanButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="26dp"
+                android:background="@drawable/pizza_button1"
+                android:text="Mexican \nGuacamole"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/prawnsButton"
+                app:layout_constraintTop_toTopOf="@+id/prawnsButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sPFButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="26dp"
+                android:background="@drawable/pizza_button1"
+                android:text="Sweet \nPotato Fries"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/mexicanButton"
+                app:layout_constraintTop_toTopOf="@+id/mexicanButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cakeButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizza_button1"
+                android:text="Banoffee Fudge"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bbqWingsButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/doughBallsButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizza_button1"
+                android:text="Dough Balls"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/wedgesButton"
+                app:layout_constraintTop_toBottomOf="@+id/wedgesButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/focacciaRButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizza_button1"
+                android:text="Focaccia\nRosemary"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/focacciaSButton"
+                app:layout_constraintTop_toBottomOf="@+id/mexicanButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/focacciaSButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizza_button1"
+                android:text="Focaccia\nSweet Chilli"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/doughBallsButton"
+                app:layout_constraintTop_toBottomOf="@+id/prawnsButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/pestoButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizza_button1"
+                android:text="Pesto Bread"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/focacciaRButton"
+                app:layout_constraintTop_toBottomOf="@+id/sPFButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/gardenSaladButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="Garden Salad"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cakeButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/chickenBaconButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="Chicken Bacon Salad"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/gardenSaladButton"
+                app:layout_constraintTop_toBottomOf="@+id/doughBallsButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/mozzTomatoButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="Mozzarella Tomato\nSalad"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/chickenBaconButton"
+                app:layout_constraintTop_toBottomOf="@+id/focacciaSButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/spinachMangoButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="Spinach Mango\nAvocado Salad"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/mozzTomatoButton"
+                app:layout_constraintTop_toBottomOf="@+id/focacciaRButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/rocketParmButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="Rocket Parmesan\nSalad"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/spinachMangoButton"
+                app:layout_constraintTop_toBottomOf="@+id/pestoButton" />
+
+
+            <TextView
+                android:id="@+id/dipsView"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:text="Dips and Drinks"
+                android:textColor="@color/logoBrown"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gardenSaladButton"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ranchButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="48dp"
+                android:background="@drawable/pizza_button1"
+                android:text="Garlic/Ranch Dip"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chickenBaconButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/pestoDipButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="48dp"
+                android:background="@drawable/pizza_button1"
+                android:text="Pesto Dip"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/ranchButton"
+                app:layout_constraintTop_toBottomOf="@+id/chickenBaconButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sweetChilliButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="26dp"
+                android:background="@drawable/pizza_button1"
+                android:text="Sweet Chilli Dip"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/pestoDipButton"
+                app:layout_constraintTop_toTopOf="@+id/pestoDipButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/garlicButterButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="26dp"
+                android:background="@drawable/pizza_button1"
+                android:text="Garlic Butter\nDip"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/sweetChilliButton"
+                app:layout_constraintTop_toTopOf="@+id/sweetChilliButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bbqButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="26dp"
+                android:background="@drawable/pizza_button1"
+                android:text="BBQ Dip"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/garlicButterButton"
+                app:layout_constraintTop_toTopOf="@+id/garlicButterButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cokeButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="Coke"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ranchButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cokeDietButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="Diet Coke"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/pestoDipButton"
+                app:layout_constraintTop_toBottomOf="@+id/pestoDipButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cokeZeroButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="Coke Zero"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/sweetChilliButton"
+                app:layout_constraintTop_toBottomOf="@+id/sweetChilliButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sevenUpButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="7UP"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/garlicButterButton"
+                app:layout_constraintTop_toBottomOf="@+id/garlicButterButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/clubOrangeButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="Club Orange"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/bbqButton"
+                app:layout_constraintTop_toBottomOf="@+id/bbqButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sanPelRedButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="San Pelegrino\nRed"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cokeButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sanPelLemButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="San Pellegrino Lemon"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/cokeDietButton"
+                app:layout_constraintTop_toBottomOf="@+id/cokeDietButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sanPelOrangeButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="San Pellegrino Orange"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/cokeZeroButton"
+                app:layout_constraintTop_toBottomOf="@+id/cokeZeroButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/stillWaterButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="Still Water"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/sevenUpButton"
+                app:layout_constraintTop_toBottomOf="@+id/sevenUpButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sparklingWaterButton"
+                android:layout_width="122dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pizaa_button2"
+                android:text="Sparkling Water"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/sevenUpButton"
+                app:layout_constraintTop_toBottomOf="@+id/sevenUpButton" />
+
+
+            <TextView
+                android:id="@+id/dipsdrinksView"
+                android:layout_width="204dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="28dp"
+                android:text="Dips and Drinks"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cakeButton"
+                app:layout_constraintVertical_bias="0.75" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/pButton"
+                android:layout_width="68dp"
+                android:layout_height="138dp"
+                android:background="@color/white"
+                android:text="Pesto Bread"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dipsdrinksView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

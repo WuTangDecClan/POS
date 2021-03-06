@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PizzaActivity">
+
+
+    <TextView
+        android:id="@+id/pizzaName"
+        android:layout_width="168dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="440dp"
+        android:layout_marginTop="100dp"
+        android:ems="15"
+        android:text="Pizza Name"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pizzaSizeNote"
+        android:layout_width="77dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="56dp"
+        android:ems="15"
+        android:text="Size -"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/twelveInchButton"
+        app:layout_constraintStart_toEndOf="@+id/pizzaName" />
+
+    <TextView
+        android:id="@+id/pizzaSize"
+        android:layout_width="113dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="56dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/twelveInchButton"
+        app:layout_constraintStart_toEndOf="@+id/pizzaSizeNote" />
+
+    <TextView
+        android:id="@+id/pizzaPriceNote"
+        android:layout_width="77dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:ems="15"
+        android:text="Price -"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/twelveInchButton"
+        app:layout_constraintStart_toEndOf="@+id/pizzaName" />
+
+    <TextView
+        android:id="@+id/pizzaPrice"
+        android:layout_width="112dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="24dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/twelveInchButton"
+        app:layout_constraintStart_toEndOf="@+id/pizzaPriceNote" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tenInchButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/pizaa_button3"
+        android:text="10 inch"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/pizzaName"
+        app:layout_constraintTop_toBottomOf="@+id/pizzaName" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/twelveInchButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/pizaa_button3"
+        android:text="12 inch"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tenInchButton"
+        app:layout_constraintTop_toBottomOf="@+id/pizzaName" />
+
+    <EditText
+        android:id="@+id/topping1Entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textCursorDrawable="@color/logoYellow"
+        android:backgroundTint="@color/shopColour"
+        android:ems="15"
+        android:hint="Topping/Note"
+        android:textColorHint="@color/logoYellow"
+        android:inputType="text"
+        android:textColor="@color/shopColour"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tenInchButton" />
+
+    <EditText
+        android:id="@+id/topping2Entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textCursorDrawable="@color/logoYellow"
+        android:backgroundTint="@color/shopColour"
+        android:ems="15"
+        android:hint="Topping/Note"
+        android:textColorHint="@color/logoYellow"
+        android:inputType="text"
+        android:textColor="@color/shopColour"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topping1Entry" />
+
+    <EditText
+        android:id="@+id/topping3Entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textCursorDrawable="@color/logoYellow"
+        android:backgroundTint="@color/shopColour"
+        android:ems="15"
+        android:hint="Topping/Note"
+        android:textColorHint="@color/logoYellow"
+        android:inputType="text"
+        android:textColor="@color/shopColour"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topping2Entry" />
+
+    <EditText
+        android:id="@+id/topping4Entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textCursorDrawable="@color/logoYellow"
+        android:backgroundTint="@color/shopColour"
+        android:ems="15"
+        android:hint="Topping/Note"
+        android:textColorHint="@color/logoYellow"
+        android:inputType="text"
+        android:textColor="@color/shopColour"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topping3Entry" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/additionalButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="452dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/pizaa_button3"
+        android:text="Additional Topping"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topping4Entry" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/premiumButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="540dp"
+        android:background="@drawable/pizaa_button3"
+        android:text="Premium Topping"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/additionalButton"
+        app:layout_constraintTop_toBottomOf="@+id/topping4Entry" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/completeBtn"
+        android:layout_width="307dp"
+        android:layout_height="68dp"
+        android:background="@drawable/pizaa_button2"
+        android:text="Complete Pizza"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/additionalButton"
+        app:layout_constraintVertical_bias="0.267" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

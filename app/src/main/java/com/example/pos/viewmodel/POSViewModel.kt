@@ -7,12 +7,18 @@ import androidx.lifecycle.viewModelScope
 import com.example.pos.repository.POSRepository
 import com.example.pos.data.POSRoomDatabase
 import com.example.pos.model.Customer
+import com.example.pos.model.Order
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-/* Accesses all the Queries from the DAO. */
+
+/* Accesses all the Queries from the DAO. ViewModel provides data to the User Interface.
+   The ViewModel is the middle man between the Repository and the User Interface. */
+
 class POSViewModel(application: Application): AndroidViewModel(application) {
 
     val readAllData: LiveData<List<Customer>>
+    val readAllOrder: LiveData<List<Order>>
+
     private val repository: POSRepository
 
     init { /* Always executed first when POSVIEWMODEL is called. */
@@ -21,21 +27,28 @@ class POSViewModel(application: Application): AndroidViewModel(application) {
         ).POSDao()
         repository = POSRepository(POSDao)
         readAllData = repository.readAllData
+        readAllOrder = repository.readAllOrder
     }
 
-    fun addCustomer(customer: Customer) { /* Dispatchers.IO says we want to run this in a background thread. */
-        viewModelScope.launch(Dispatchers.IO) { /* Runs in worker thread, or background thread. */
+    fun addCustomer(customer: Customer) { /* Function to add Customer to Repository. */
+        viewModelScope.launch(Dispatchers.IO) {
             repository.addCustomer(customer)
         }
     }
 
-    fun updateCustomer(customer: Customer) {
+    fun addOrder(order: Order) { /* Dispatchers.IO says we want to run this in a background thread. */
+        viewModelScope.launch(Dispatchers.IO) { /* Runs in worker thread, or background thread. */
+            repository.addOrder(order)
+        }
+    }
+
+    fun updateCustomer(customer: Customer) { /* Function to update Customer in the Repository. */
         viewModelScope.launch(Dispatchers.IO){ /* Going to run this Query from a background thread. */
             repository.updateCustomer(customer)
         }
     }
 
-    fun deleteCustomer(customer: Customer) {
+    fun deleteCustomer(customer: Customer) { /* Function to delete Customer in the Repository. */
         viewModelScope.launch(Dispatchers.IO) {
             repository.deleteCustomer(customer)
         }
