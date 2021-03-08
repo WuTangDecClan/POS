@@ -17,7 +17,7 @@
         android:padding="12dp">
 
         <TextView
-            android:id="@+id/productNameView4"
+            android:id="@+id/productNameView5"
             android:layout_width="249dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="2dp"
@@ -27,69 +27,69 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/productQuantityView4"
+            android:id="@+id/productQuantityView5"
             android:layout_width="28dp"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/productPriceView4"
+            android:layout_alignTop="@+id/productPriceView5"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="1dp"
             android:layout_marginEnd="2dp"
-            android:layout_toEndOf="@+id/productNameView4"
+            android:layout_toEndOf="@+id/productNameView5"
             android:text="12"
             android:textColor="@color/shopColour"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/productQuantitySizeView4"
+            android:id="@+id/productQuantitySizeView5"
             android:layout_width="48dp"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/productQuantityView4"
+            android:layout_alignBottom="@+id/productQuantityView5"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="2dp"
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="1dp"
-            android:layout_toEndOf="@+id/productQuantityView4"
+            android:layout_toEndOf="@+id/productQuantityView5"
             android:text="inch"
             android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/productQuantityCostView4"
+            android:id="@+id/productQuantityCostView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="2dp"
             android:layout_marginEnd="2dp"
-            android:layout_toEndOf="@+id/productQuantitySizeView4"
+            android:layout_toEndOf="@+id/productQuantitySizeView5"
             android:text="€"
             android:textColor="@color/shopColour"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/productPriceView4"
+            android:id="@+id/productPriceView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/productQuantityCostView4"
+            android:layout_alignTop="@+id/productQuantityCostView5"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="2dp"
-            android:layout_toEndOf="@+id/productQuantityCostView4"
+            android:layout_toEndOf="@+id/productQuantityCostView5"
             android:text="14.50"
             android:textColor="@color/shopColour"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/topping1View4"
+            android:id="@+id/topping1View5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/productNameView4"
-            android:layout_alignStart="@+id/productNameView4"
+            android:layout_below="@+id/productNameView5"
+            android:layout_alignStart="@+id/productNameView5"
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             android:text="Take and Bake Quality Pizza Making at"
@@ -98,11 +98,11 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/topping2View4"
+            android:id="@+id/topping2View5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/topping1View4"
-            android:layout_alignStart="@+id/topping1View4"
+            android:layout_below="@+id/topping1View5"
+            android:layout_alignStart="@+id/topping1View5"
             android:layout_marginStart="0dp"
             android:layout_marginTop="12dp"
             android:text="Aubergine"
@@ -111,11 +111,11 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/topping3View4"
+            android:id="@+id/topping3View5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/topping2View4"
-            android:layout_alignStart="@+id/topping2View4"
+            android:layout_below="@+id/topping2View5"
+            android:layout_alignStart="@+id/topping2View5"
             android:layout_marginStart="0dp"
             android:layout_marginTop="12dp"
             android:text="Smoked Applewood"
@@ -124,14 +124,27 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/topping4View4"
+            android:id="@+id/topping4View5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/topping3View4"
-            android:layout_alignStart="@+id/topping3View4"
+            android:layout_below="@+id/topping3View5"
+            android:layout_alignStart="@+id/topping3View5"
             android:layout_marginStart="0dp"
             android:layout_marginTop="12dp"
             android:text="Semi Dried Tomatos"
+            android:textColor="@color/logoYellow"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/topping5View5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topping4View5"
+            android:layout_alignStart="@+id/topping4View5"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="12dp"
+            android:text="Ex Mozz "
             android:textColor="@color/logoYellow"
             android:textSize="16dp"
             android:textStyle="bold" />

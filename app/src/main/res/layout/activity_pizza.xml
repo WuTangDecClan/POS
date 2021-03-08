@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".PizzaActivity">
 
-
     <TextView
         android:id="@+id/pizzaName"
         android:layout_width="168dp"
@@ -23,8 +22,8 @@
 
     <TextView
         android:id="@+id/pizzaSizeNote"
-        android:layout_width="77dp"
-        android:layout_height="32dp"
+        android:layout_width="113dp"
+        android:layout_height="29dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="56dp"
         android:ems="15"
@@ -50,12 +49,12 @@
 
     <TextView
         android:id="@+id/pizzaPriceNote"
-        android:layout_width="77dp"
-        android:layout_height="31dp"
+        android:layout_width="114dp"
+        android:layout_height="32dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="24dp"
         android:ems="15"
-        android:text="Price -"
+        android:text="Price - €"
         android:textColor="@color/logoYellow"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -219,6 +218,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/additionalButton"
         app:layout_constraintVertical_bias="0.267" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

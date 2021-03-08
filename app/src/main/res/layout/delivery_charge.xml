@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardViewItem1"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:layout_margin="4dp"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="8dp"
+    app:cardPreventCornerOverlap="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/deliveryView"
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="2dp"
+            android:text="Delivery Charge"
+            android:textColor="@color/shopColour"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/euroView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_toEndOf="@+id/deliveryView"
+            android:text="€"
+            android:textColor="@color/logoYellow"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/deliveryPriceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/euroView"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="6dp"
+            android:layout_toEndOf="@+id/euroView"
+            android:text="2.50"
+            android:textColor="@color/logoYellow"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -11,10 +11,10 @@
         android:id="@+id/updateTextName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="268dp"
         android:ems="15"
-        android:inputType="textPersonName"
         android:hint="Name"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -85,5 +85,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/updateBtn"
         app:layout_constraintTop_toBottomOf="@+id/updateTextAddress" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/pickBtn"
+        android:layout_width="307dp"
+        android:layout_height="68dp"
+        android:background="@drawable/pizza_button1"
+        android:text="Pick Customer"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/updateTextName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

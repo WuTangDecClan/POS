@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardViewItem1"
+    android:layout_width="420dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:layout_margin="4dp"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="8dp"
+    app:cardPreventCornerOverlap="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/sideNameView2"
+            android:layout_width="247dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:text="BBQ Chicken Wings"
+            android:textColor="@color/shopColour"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/euroSignView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_toEndOf="@+id/sideNameView2"
+            android:text="€"
+            android:textColor="@color/shopColour"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sidePriceView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/sideNameView2"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="2dp"
+            android:layout_toEndOf="@+id/euroSignView2"
+            android:text="14.50"
+            android:textColor="@color/shopColour"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/topping1View2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sideNameView2"
+            android:layout_alignStart="@+id/sideNameView2"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:text="Take and Bake Quality Pizza Making at"
+            android:textColor="@color/logoYellow"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/topping2View2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topping1View2"
+            android:layout_alignStart="@+id/topping1View2"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="12dp"
+            android:text="Aubergine"
+            android:textColor="@color/logoYellow"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OpenFoodActivity">
+
+    <TextView
+        android:id="@+id/openFoodInstructions"
+        android:layout_width="299dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="176dp"
+        android:ems="15"
+        android:text="Add an Open Food Charge"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/openFoodDetailsview"
+        android:layout_width="298dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/shopColour"
+        android:ems="15"
+        android:hint="Details of the Open Food"
+        android:inputType="text"
+        android:textColor="@color/shopColour"
+        android:textColorHint="@color/logoYellow"
+        android:textCursorDrawable="@color/logoYellow"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/openFoodInstructions"
+        app:layout_constraintTop_toBottomOf="@+id/openFoodInstructions" />
+
+    <TextView
+        android:id="@+id/openFoodMoneySymbol"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="380dp"
+        android:ems="15"
+        android:text="€"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/openFoodMoneyview"
+        app:layout_constraintEnd_toStartOf="@+id/openFoodMoneyview"
+        app:layout_constraintHorizontal_bias="0.648"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/openFoodDetailsview"
+        app:layout_constraintVertical_bias="0.769" />
+
+    <EditText
+        android:id="@+id/openFoodMoneyview"
+        android:layout_width="298dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/shopColour"
+        android:ems="15"
+        android:hint="21.28"
+        android:inputType="text"
+        android:textColor="@color/shopColour"
+        android:textColorHint="@color/logoYellow"
+        android:textCursorDrawable="@color/logoYellow"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/openFoodDetailsview"
+        app:layout_constraintTop_toBottomOf="@+id/openFoodDetailsview" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/completeOpenFoodBtn"
+        android:layout_width="307dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="312dp"
+        android:background="@drawable/pizaa_button2"
+        android:text="Complete Delivery Charge"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

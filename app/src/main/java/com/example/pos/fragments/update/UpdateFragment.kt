@@ -1,5 +1,6 @@
 package com.example.pos.fragments.update
 
+import android.content.Intent
 import androidx.appcompat.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.pos.R
+import com.example.pos.*
 import com.example.pos.model.Customer
 import com.example.pos.viewmodel.POSViewModel
 import kotlinx.android.synthetic.main.fragment_update.*
@@ -42,6 +43,24 @@ class UpdateFragment : Fragment() {
 
         view.deleteBtn.setOnClickListener {
             deleteItem()
+        }
+
+        view.pickBtn.setOnClickListener {
+            val name = updateTextName.text.toString()
+            val number = updateTextNumber.text.toString()
+            val postalCode = updatePostalAddress.text.toString()
+            val address = updateTextAddress.text.toString()
+
+            Toast.makeText(requireContext(), "Pick Button Clicked!", Toast.LENGTH_LONG).show()
+           val intent = Intent()
+
+            intent.putExtra("customerName", name)
+            intent.putExtra("customerNumber", number)
+            intent.putExtra("postalCode", postalCode)
+            intent.putExtra("address", address)
+
+           // setResult(RESULT_CODE_2, intent) /* Setting the Result to pass the OK (-1) Result and including the intent with its data. */
+           // finish() /* Ending the  Activity. */
         }
 
         return view

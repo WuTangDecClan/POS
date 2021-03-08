@@ -17,8 +17,8 @@
         android:padding="12dp">
 
         <TextView
-            android:id="@+id/productNameView"
-            android:layout_width="243dp"
+            android:id="@+id/productNameView1"
+            android:layout_width="249dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="2dp"
             android:text="Coliemore Harbour Pizza"
@@ -27,61 +27,74 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/productQuantityView"
+            android:id="@+id/productQuantityView1"
             android:layout_width="28dp"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/productPriceView"
+            android:layout_alignTop="@+id/productPriceView1"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="1dp"
             android:layout_marginEnd="2dp"
-            android:layout_toEndOf="@+id/productNameView"
+            android:layout_toEndOf="@+id/productNameView1"
             android:text="12"
             android:textColor="@color/shopColour"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/productQuantitySizeView"
+            android:id="@+id/productQuantitySizeView1"
             android:layout_width="48dp"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/productQuantityView"
+            android:layout_alignBottom="@+id/productQuantityView1"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginEnd="0dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginEnd="2dp"
             android:layout_marginBottom="1dp"
-            android:layout_toEndOf="@+id/productQuantityView"
+            android:layout_toEndOf="@+id/productQuantityView1"
             android:text="inch"
             android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/productQuantityCostView"
+            android:id="@+id/productQuantityCostView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="2dp"
             android:layout_marginEnd="2dp"
-            android:layout_toEndOf="@+id/productQuantitySizeView"
+            android:layout_toEndOf="@+id/productQuantitySizeView1"
             android:text="€"
             android:textColor="@color/shopColour"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/productPriceView"
+            android:id="@+id/productPriceView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/productQuantityCostView"
+            android:layout_alignTop="@+id/productQuantityCostView1"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="0dp"
-            android:layout_marginEnd="6dp"
-            android:layout_toEndOf="@+id/productQuantityCostView"
+            android:layout_marginEnd="2dp"
+            android:layout_toEndOf="@+id/productQuantityCostView1"
             android:text="14.50"
             android:textColor="@color/shopColour"
             android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/topping1View1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/productNameView1"
+            android:layout_alignStart="@+id/productNameView1"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:text="Take and Bake Quality Pizza Making at"
+            android:textColor="@color/logoYellow"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
     </RelativeLayout>

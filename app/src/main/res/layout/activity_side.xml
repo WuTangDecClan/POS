@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SideActivity">
+
+    <TextView
+        android:id="@+id/sideName"
+        android:layout_width="242dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="376dp"
+        android:layout_marginTop="148dp"
+        android:ems="15"
+        android:text="BBQ Chicken Wings"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sidePriceNote"
+        android:layout_width="114dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:ems="15"
+        android:text="Price - €"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/sideName"
+        app:layout_constraintTop_toTopOf="@+id/sidePrice" />
+
+    <TextView
+        android:id="@+id/sidePrice"
+        android:layout_width="112dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="148dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toEndOf="@+id/sidePriceNote"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/topping1Entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="@color/shopColour"
+        android:ems="15"
+        android:hint="Topping/Note"
+        android:inputType="text"
+        android:textColor="@color/shopColour"
+        android:textColorHint="@color/logoYellow"
+        android:textCursorDrawable="@color/logoYellow"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sideName" />
+
+    <EditText
+        android:id="@+id/topping2Entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textCursorDrawable="@color/logoYellow"
+        android:backgroundTint="@color/shopColour"
+        android:ems="15"
+        android:hint="Topping/Note"
+        android:textColorHint="@color/logoYellow"
+        android:inputType="text"
+        android:textColor="@color/shopColour"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topping1Entry" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/additionalSideButton"
+        android:layout_width="132dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="532dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/pizaa_button3"
+        android:text="Additional Topping"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topping2Entry" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/completeSideBtn"
+        android:layout_width="307dp"
+        android:layout_height="68dp"
+        android:background="@drawable/pizaa_button2"
+        android:text="Complete Side Order"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/additionalSideButton"
+        app:layout_constraintVertical_bias="0.267" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

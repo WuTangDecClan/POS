@@ -54,10 +54,10 @@ class OrderListAdapter(var orderListItems: List<OrderModel>) : RecyclerView.Adap
             itemView.productQuantityView4.text = orderModel.productQuantity
             itemView.productPriceView4.text = orderModel.productCost
 
-            itemView.topping1View.text = orderModel.additional1
-            itemView.topping2View.text = orderModel.additional2
-            itemView.topping3View.text = orderModel.additional3
-            itemView.topping4View.text = orderModel.additional4
+            itemView.topping1View4.text = orderModel.additional1
+            itemView.topping2View4.text = orderModel.additional2
+            itemView.topping3View4.text = orderModel.additional3
+            itemView.topping4View4.text = orderModel.additional4
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -85,6 +85,8 @@ class OrderListAdapter(var orderListItems: List<OrderModel>) : RecyclerView.Adap
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if(getItemViewType(position) == ORDER_TYPE_0) {
             (holder as Item0ViewHolder).bind(orderListItems[position])
+        } else if(getItemViewType(position) == ORDER_TYPE_1) {
+            (holder as Item2ViewHolder).bind(orderListItems[position])
         } else {
             (holder as Item4ViewHolder).bind(orderListItems[position])
         }

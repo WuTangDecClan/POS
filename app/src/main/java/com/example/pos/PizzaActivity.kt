@@ -20,6 +20,10 @@ const val ADD_TOP_LARGE = 1.10
 const val ADD_PREM_SMALL = 1.3
 const val ADD_PREM_LARGE = 1.5
 
+const val RESULT_CODE_1 = 1
+const val RESULT_CODE_2 = 2
+
+
 class PizzaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +33,8 @@ class PizzaActivity : AppCompatActivity() {
         pizzaName.text = intent.getStringExtra("itemName").toString() /* Adding the name of the pizza to Screen. */
         val pizzaPrice: TextView = findViewById(R.id.pizzaPrice)
         pizzaPrice.text = intent.getStringExtra("itemPrice").toString() /* Adding the price of the pizza to Screen. */
+        val smallPrice: String = pizzaPrice.text.toString().substring(startIndex = 0, endIndex = 4) //"10.8-12.8"
+        val largePrice: String = pizzaPrice.text.toString().substring(startIndex = 5, endIndex = 9)
         val pizzaSize: TextView = findViewById(R.id.pizzaSize)
 
         val topping1: EditText = findViewById(R.id.topping1Entry) /* Storing the View Topping 1 in the variable topping1. */
@@ -42,7 +48,7 @@ class PizzaActivity : AppCompatActivity() {
             twelveInchButton.setTextColor(Color.WHITE)
             Toast.makeText(this, "Ten inch selected", Toast.LENGTH_SHORT).show() /* Lets the user know. */
             insertSize(size = SIZE_SMALL.toString(), pizzaSize = pizzaSize) /* Calling to insert the Size, passing the arguments SIZE_SMALL & the View pizzaSlice. */
-            setPrice(price = "9.90", pizzaPrice = pizzaPrice) /* Calling to set** the price of the item, passing the price and the View pizzaPrice. */
+            setPrice(price = smallPrice, pizzaPrice = pizzaPrice) /* Calling to set** the price of the item, passing the price and the View pizzaPrice. */
         }
 
         /* If the user clicks 12 inch then call the insertSize function and the setPrice function. */
@@ -51,7 +57,7 @@ class PizzaActivity : AppCompatActivity() {
             twelveInchButton.setTextColor(Color.rgb(136,27,50))
             Toast.makeText(this, "Twelve inch selected", Toast.LENGTH_SHORT).show() /* Lets the user know. */
             insertSize(size = SIZE_LARGE.toString(), pizzaSize = pizzaSize) /* Calling to insert the Size, passing the arguments SIZE_LARGE & the View pizzaSlice. */
-            setPrice(price = "11.8", pizzaPrice = pizzaPrice) /* Calling to set** the price of the item, passing the price and the View pizzaPrice. */
+            setPrice(price = largePrice, pizzaPrice = pizzaPrice) /* Calling to set** the price of the item, passing the price and the View pizzaPrice. */
         }
 
         /* If the user clicks additional button to charge for addition: check size and call function to changePrice. */
@@ -95,6 +101,10 @@ class PizzaActivity : AppCompatActivity() {
             val itemName: String = pizzaName.text.toString() /* Storing all the changes to the views that have been made. */
             val itemPrice: String = pizzaPrice.text.toString()
             val itemSize: String = pizzaSize.text.toString()
+            val top1: String = topping1.text.toString()
+            val top2: String = topping2.text.toString()
+            val top3: String = topping3.text.toString()
+            val top4: String = topping4.text.toString()
 
             if (itemSize == "10" || itemSize == "12") {
                 val intent = Intent()  /* Creating an Intent. */
@@ -102,17 +112,17 @@ class PizzaActivity : AppCompatActivity() {
                 intent.putExtra("itemPrice", itemPrice) /* Adding changes made to be sent back and read for the new entry in the RecyclerView. */
                 intent.putExtra("itemSize", itemSize)
 
-                if (!emptyAdditions(topping1) || !emptyAdditions(topping2) || !emptyAdditions(topping3) || !emptyAdditions(topping4)) { /* If the User added any information to toppings 1..4 put them extra too. */
-                    intent.putExtra("topping1", "$topping1")
-                    intent.putExtra("topping2", "$topping2")
-                    intent.putExtra("topping3", "$topping3")
-                    intent.putExtra("topping4", "$topping4")
-                    setResult(Activity.RESULT_OK, intent) /* Setting the Result to pass the OK (-1) Result and including the intent with its data. */
+                if (emptyAdditions(top1) || emptyAdditions(top2) || emptyAdditions(top3) || emptyAdditions(top4) ) {
+                    intent.putExtra("topping1", top1)
+                    intent.putExtra("topping2", top2)
+                    intent.putExtra("topping3", top3)
+                    intent.putExtra("topping4", top4)
+                    setResult(RESULT_CODE_2, intent) /* Setting the Result to pass the OK (-1) Result and including the intent with its data. */
+                    finish() /* Ending the  Activity. */
                 } else {
-                    setResult(Activity.RESULT_OK, intent) /* Setting the Result to pass the OK (-1) Result and including the intent with its data. */
-                    startActivity(intent) /* Starting Activity. */
+                    setResult(RESULT_CODE_1, intent) /* Setting the Result to pass the OK (-1) Result and including the intent with its data. */
+                    finish() /* Ending the  Activity. */
                 }
-                finish() /* Ending the  Activity. */
             } else { /* If the size hasn't been picked then change the colors of the inches and warn the user. */
                 tenInchButton.setTextColor(Color.rgb(202,180,156))
                 twelveInchButton.setTextColor(Color.rgb(202,180,156))
@@ -122,9 +132,8 @@ class PizzaActivity : AppCompatActivity() {
     }
 
     /* Function to check if the User has entered information into toppings or not. */
-    private fun emptyAdditions(editText: EditText): Boolean {
-        val msg: String = editText.text.toString()
-        return msg.trim().isNotEmpty()
+    private fun emptyAdditions(msg: String): Boolean {
+        return msg.isNotEmpty()
 
     }
 
@@ -142,6 +151,7 @@ class PizzaActivity : AppCompatActivity() {
     private fun changePrice(price: Double, textView: TextView) {
         var cost = textView.text.toString()
         var total = (cost.toDouble() + price)
+        total = String.format("%.2f", total).toDouble()
         textView.text = total.toString()
     }
 

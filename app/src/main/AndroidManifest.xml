@@ -12,12 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.POS"
         android:windowSoftInputMode="adjustPan">
-        <activity android:name=".PizzaActivity"
+        <activity android:name=".SideActivity"></activity>
+        <activity
+            android:name=".OpenFoodActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".DeliveryActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PizzaActivity"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name=".ActiveOrderActivity"
-            android:screenOrientation="landscape" />
         <activity
             android:name=".ManagementActivity"
             android:screenOrientation="landscape" />

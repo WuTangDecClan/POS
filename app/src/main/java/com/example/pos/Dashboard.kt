@@ -28,17 +28,15 @@ class Dashboard : AppCompatActivity() {
         customersButton.setOnClickListener {
             val intent = Intent(this@Dashboard, CustomerActivity::class.java)  /* Creating an Intent to go to Dashboard. */
             startActivity(intent) /* Starting Activity. */
-
         }
 
         placeOrderButton.setOnClickListener {
             val intent = Intent(this@Dashboard, OrderActivity::class.java)  /* Creating an Intent to go to Dashboard. */
             startActivity(intent) /* Starting Activity. */
-
         }
 
         ordersButton.setOnClickListener {
-            val intent = Intent(this@Dashboard, ActiveOrderActivity::class.java)  /* Creating an Intent to go to Dashboard. */
+            val intent = Intent(this@Dashboard, LoginActivity::class.java)  /* Creating an Intent to go to Dashboard. */
             startActivity(intent) /* Starting Activity. */
         }
 
