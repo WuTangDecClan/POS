@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentActivity">
+
+    <TextView
+        android:id="@+id/paymentInstructions"
+        android:layout_width="317dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="100dp"
+        android:ems="15"
+        android:text="Choose a Payment Method"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/paymentType"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:ems="15"
+        android:text="Cash"
+        android:gravity="center"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentInstructions" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/amountDueButton"
+        android:layout_width="221dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="244dp"
+        android:background="@drawable/pizaa_button3"
+        android:text="Amount Due:"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/moneyEntry"
+        app:layout_constraintEnd_toStartOf="@+id/justEatView"
+        app:layout_constraintTop_toBottomOf="@+id/paymentInstructions"
+        app:layout_constraintVertical_bias="0.307" />
+
+    <TextView
+        android:id="@+id/paymentMoneySymbol"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="76dp"
+        android:ems="15"
+        android:text="€"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/amountReturnButton"
+        app:layout_constraintEnd_toStartOf="@+id/moneyEntry"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/moneyEntry"
+        android:layout_width="249dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/shopColour"
+        android:ems="15"
+        android:hint="Cash Given"
+        android:inputType="text"
+        android:textColor="@color/shopColour"
+        android:textColorHint="@color/logoYellow"
+        android:textCursorDrawable="@color/logoYellow"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/garysView"
+        app:layout_constraintEnd_toStartOf="@+id/justEatView"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/amountReturnButton"
+        android:layout_width="221dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="244dp"
+        android:background="@drawable/pizaa_button3"
+        android:text="Change Due:"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/garysView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moneyEntry" />
+
+
+    <ImageView
+        android:id="@+id/justEatView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="80dp"
+        android:tag="Just Eat"
+        app:layout_constraintEnd_toStartOf="@+id/deliverooView"
+        app:layout_constraintTop_toBottomOf="@+id/paymentInstructions"
+        app:srcCompat="@drawable/just_eat_logo" />
+
+    <ImageView
+        android:id="@+id/deliverooView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="115dp"
+        android:tag="Deliveroo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentInstructions"
+        app:srcCompat="@drawable/deliveroo_logo" />
+
+    <ImageView
+        android:id="@+id/garysView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="80dp"
+        android:tag="Gary's Gourmet Website"
+        app:layout_constraintEnd_toStartOf="@+id/visaView"
+        app:layout_constraintTop_toBottomOf="@+id/justEatView"
+        app:srcCompat="@drawable/garrylogo" />
+
+    <ImageView
+        android:id="@+id/visaView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="115dp"
+        android:tag="Visa Payment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deliverooView"
+        app:srcCompat="@drawable/visa_mastercard_logo" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/completePayment_btn"
+        android:layout_width="247dp"
+        android:layout_height="84dp"
+        android:layout_marginEnd="540dp"
+        android:layout_marginBottom="76dp"
+        android:background="@drawable/pizza_button3"
+        android:text="Complete Payment"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nestedScrollView"
+        app:layout_constraintTop_toBottomOf="@+id/paymentType"
+        app:layout_constraintVertical_bias="0.91" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,6 +28,14 @@ class OrderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order)
 
+        val customerName: String = getIntent().getStringExtra("customerName").toString()
+        val customerNumber: String = getIntent().getStringExtra("customerNumber").toString()
+        val customerPostal: String = getIntent().getStringExtra("postalCode").toString()
+        val customerAddress: String = getIntent().getStringExtra("address").toString()
+
+        insertCustomer(customerName, customerNumber, customerPostal, customerAddress)
+
+
         customerButton.setOnClickListener { /* Customer onclick button: Gets taken to the customer screen. */
             val intent = Intent(this@OrderActivity, CustomerActivity::class.java)  /* Creating an Intent to go to Customer Activity. */
             startActivityForResult(intent,1) /* Starting Activity for result. */
@@ -47,6 +55,11 @@ class OrderActivity : AppCompatActivity() {
             val intent = Intent(this@OrderActivity, Dashboard::class.java)  /* Creating an Intent to go to Customer Activity. */
             startActivity(intent) /* Starting Activity. */
             finish() /* Finishing the Activity. */
+        }
+
+        complete_btn.setOnClickListener {
+            val intent = Intent(this@OrderActivity, PaymentActivity::class.java)  /* Creating an Intent to go to Customer Activity. */
+            startActivityForResult(intent,1) /* Starting Activity for result. */
         }
 
         /* Set the LayoutManager that this RecyclerView will use. */
@@ -126,6 +139,14 @@ class OrderActivity : AppCompatActivity() {
         }
     }
 
+    private fun insertCustomer(customerName: String, customerNumber: String, customerPostal: String, customerAddress: String) {
+
+        val newItem = DataModel(customerName = customerName, customerNumber = customerNumber, customerPostal = customerPostal, customerAddress = customerAddress, viewType = OrderAdapter.CUSTOMER) /* Adding the item with correct arguments */
+        list.add(INDEX, newItem) /* Adding Item at Position Index. */
+        orderAdapter.notifyItemInserted(INDEX) /* Notifying the Adapter of the addition. */
+
+    }
+
     private fun insertSide(name: String, price: String) {
 
         Toast.makeText(this, "Side Item Added!", Toast.LENGTH_SHORT).show() /* Toast Message to confirm insertion. */
@@ -158,7 +179,7 @@ class OrderActivity : AppCompatActivity() {
 
         Toast.makeText(this, "Item added!", Toast.LENGTH_SHORT).show() /* Toast Message to confirm insertion. */
 
-        val newItem = DataModel("$name", "$size", "$price", viewType = OrderAdapter.NO_TOPPING) /* Adding the item with correct arguments */
+        val newItem = DataModel(itemName = "$name",itemQuantity =  "$size",itemPrice =  "$price", viewType = OrderAdapter.NO_TOPPING) /* Adding the item with correct arguments */
         list.add(INDEX, newItem) /* Adding Item at Position Index. */
         orderAdapter.notifyItemInserted(INDEX) /* Notifying the Adapter of the addition. */
     }

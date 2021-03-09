@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.food_item_4.view.*
 import kotlinx.android.synthetic.main.delivery_charge.view.*
 import kotlinx.android.synthetic.main.sideorder_type1.view.*
 import kotlinx.android.synthetic.main.sideorder_type2.view.*
-
+import kotlinx.android.synthetic.main.customer_item.view.*
 
 class OrderAdapter(val context: Context, val items: ArrayList<DataModel>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -25,6 +25,7 @@ class OrderAdapter(val context: Context, val items: ArrayList<DataModel>) :
         const val OPEN_FOOD_CHARGE = 12
         const val SIDE_ORDER_TYPE_1 = 13
         const val SIDE_ORDER_TYPE_2 = 14
+        const val CUSTOMER = 21
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -73,6 +74,14 @@ class OrderAdapter(val context: Context, val items: ArrayList<DataModel>) :
             return ViewHolder3(
                 LayoutInflater.from(context).inflate(
                     R.layout.openfood_charge,
+                    parent,
+                    false
+                )
+            )
+        } else if (viewType == CUSTOMER) {
+            return ViewHolder7(
+                LayoutInflater.from(context).inflate(
+                    R.layout.customer_item,
                     parent,
                     false
                 )
@@ -126,6 +135,11 @@ class OrderAdapter(val context: Context, val items: ArrayList<DataModel>) :
 
             holder.toppingside1.text = item.topping1
             holder.toppingside2.text = item.topping2
+        } else if(holder is ViewHolder7) {
+            holder.customer.text = item.customerName
+            holder.number.text = item.customerNumber
+            holder.eircode.text = item.customerPostal
+            holder.address.text = item.customerAddress
         }
 
     }
@@ -175,6 +189,14 @@ class OrderAdapter(val context: Context, val items: ArrayList<DataModel>) :
 
         val toppingside1 = view.topping1View2
         val toppingside2 = view.topping2View2
+
+    }
+
+    class ViewHolder7(view: View) : RecyclerView.ViewHolder(view) {
+        val customer = view.nameView
+        val number = view.mobileView
+        val eircode = view.eircodeView
+        val address = view.address1View
 
     }
 }

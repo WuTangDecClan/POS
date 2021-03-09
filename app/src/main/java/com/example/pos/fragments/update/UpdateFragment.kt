@@ -51,16 +51,12 @@ class UpdateFragment : Fragment() {
             val postalCode = updatePostalAddress.text.toString()
             val address = updateTextAddress.text.toString()
 
-            Toast.makeText(requireContext(), "Pick Button Clicked!", Toast.LENGTH_LONG).show()
-           val intent = Intent()
-
+            val intent = Intent(getActivity(), OrderActivity::class.java)
             intent.putExtra("customerName", name)
             intent.putExtra("customerNumber", number)
             intent.putExtra("postalCode", postalCode)
             intent.putExtra("address", address)
-
-           // setResult(RESULT_CODE_2, intent) /* Setting the Result to pass the OK (-1) Result and including the intent with its data. */
-           // finish() /* Ending the  Activity. */
+            requireActivity().startActivity(intent)
         }
 
         return view

@@ -1,6 +1,7 @@
 package com.example.pos
 
-data class DataModel(val itemName: String? = null,
+data class DataModel(
+                     val itemName: String? = null,
                      val itemQuantity: String? = null,
                      val itemPrice: String? = null,
                      val topping1: String? = null,
@@ -13,4 +14,8 @@ data class DataModel(val itemName: String? = null,
                      val sidePrice: String? = null,
                      val openFoodDetails: String? = null,
                      val openFoodCharge: String? = null,
+                     val customerName: String? = null,
+                     val customerNumber: String? = null,
+                     val customerPostal: String? = null,
+                     val customerAddress: String? = null,
                      val viewType: Int)
