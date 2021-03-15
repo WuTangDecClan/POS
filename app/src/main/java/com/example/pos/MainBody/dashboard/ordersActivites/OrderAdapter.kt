@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pos.DataModel
+import com.example.pos.model.DataModel
 import com.example.pos.R
 import kotlinx.android.synthetic.main.openfood_charge.view.*
 import kotlinx.android.synthetic.main.food_item.view.*
@@ -152,10 +152,22 @@ class OrderAdapter(val context: Context, val items: ArrayList<DataModel>) :
         return items.size
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
         val productQuantity = view.productQuantityView
         val productName = view.productNameView
         val productPrice = view.productPriceView
+
+        init { /* Acts like a constructor in Java. */
+            view.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            TODO("Not yet implemented")
+        }
+    }
+
+    interface onItemClickListener {
+        fun  onItemClick()
     }
 
     class ViewHolder2(view: View) : RecyclerView.ViewHolder(view) {

@@ -8,7 +8,7 @@
     android:background="@color/shopColour"
     android:orientation="horizontal"
     android:textAlignment="center"
-    tools:context=".MainActivity">
+    tools:context=".MainBody.MainActivity">
 
     <ImageView
         android:id="@+id/garryLogo"

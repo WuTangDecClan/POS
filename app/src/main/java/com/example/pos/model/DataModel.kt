@@ -1,4 +1,4 @@
-package com.example.pos
+package com.example.pos.model
 
 data class DataModel(
                      val itemName: String? = null,
@@ -18,4 +18,6 @@ data class DataModel(
                      val customerNumber: String? = null,
                      val customerPostal: String? = null,
                      val customerAddress: String? = null,
+                     val paymentAmount: String? = null,
+                     val paymentType: String? = null,
                      val viewType: Int)

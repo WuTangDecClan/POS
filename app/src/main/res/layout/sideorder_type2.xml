@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/cardViewItem1"
-    android:layout_width="420dp"
+    android:layout_width="400dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp"
@@ -30,12 +30,12 @@
             android:id="@+id/euroSignView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="64dp"
             android:layout_marginLeft="2dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/sideNameView2"
             android:text="€"
-            android:textColor="@color/shopColour"
+            android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -44,13 +44,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/sideNameView2"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="0dp"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="1dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/euroSignView2"
-            android:text="14.50"
-            android:textColor="@color/shopColour"
+            android:text="14.5"
+            android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
 

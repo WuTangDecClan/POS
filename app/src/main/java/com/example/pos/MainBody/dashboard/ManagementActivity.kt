@@ -1,10 +1,11 @@
-package com.example.pos
+package com.example.pos.MainBody.dashboard
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pos.MainBody.registration.LoginActivity
+import com.example.pos.R
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.activity_dashboard.garysImageView
 import kotlinx.android.synthetic.main.activity_dashboard.userDetails
 import kotlinx.android.synthetic.main.activity_management.*

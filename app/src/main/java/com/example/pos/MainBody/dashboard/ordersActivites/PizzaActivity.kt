@@ -1,16 +1,13 @@
-package com.example.pos
+package com.example.pos.MainBody.dashboard.ordersActivites
 
-import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.example.multiplerecyclerview.OrderAdapter
-import kotlinx.android.synthetic.main.activity_order.*
+import com.example.pos.R
 import kotlinx.android.synthetic.main.activity_pizza.*
 
 const val SIZE_SMALL = 10

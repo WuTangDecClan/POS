@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/cardViewItem1"
-    android:layout_width="420dp"
+    android:layout_width="400dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp"
@@ -12,7 +12,7 @@
     app:cardPreventCornerOverlap="false">
 
     <RelativeLayout
-        android:layout_width="440dp"
+        android:layout_width="400dp"
         android:layout_height="match_parent"
         android:padding="12dp">
 
@@ -35,22 +35,22 @@
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/sideNameView"
             android:text="€"
-            android:textColor="@color/shopColour"
+            android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/sidePriceView"
-            android:layout_width="wrap_content"
+            android:layout_width="43dp"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/sideNameView"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="15dp"
             android:layout_marginLeft="2dp"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="0dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/euroSignView"
-            android:text="14.50"
-            android:textColor="@color/shopColour"
+            android:text="4.5"
+            android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
 

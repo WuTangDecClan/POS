@@ -1,10 +1,11 @@
-package com.example.pos
+package com.example.pos.MainBody.dashboard.ordersActivites
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pos.model.OrderModel
+import com.example.pos.R
 import kotlinx.android.synthetic.main.food_item.view.*
 import kotlinx.android.synthetic.main.food_item_4.view.*
 
@@ -63,10 +64,14 @@ class OrderListAdapter(var orderListItems: List<OrderModel>) : RecyclerView.Adap
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         if(viewType == ORDER_TYPE_0) {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.food_item, parent, false)
-            return Item0ViewHolder(view)
+            return Item0ViewHolder(
+                view
+            )
         } else {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.food_item_4, parent, false)
-            return Item4ViewHolder(view)
+            return Item4ViewHolder(
+                view
+            )
         }
     }
 

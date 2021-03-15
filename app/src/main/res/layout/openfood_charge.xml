@@ -18,9 +18,10 @@
 
         <TextView
             android:id="@+id/openFoodView"
-            android:layout_width="wrap_content"
+            android:layout_width="243dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="6dp"
             android:layout_marginEnd="2dp"
             android:text="Open Food Description"
             android:textColor="@color/shopColour"
@@ -29,11 +30,9 @@
 
         <TextView
             android:id="@+id/euroView"
-            android:layout_width="wrap_content"
+            android:layout_width="17dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="6dp"
-            android:layout_marginEnd="2dp"
+            android:layout_marginStart="51dp"
             android:layout_toEndOf="@+id/openFoodView"
             android:text="€"
             android:textColor="@color/logoYellow"
@@ -45,14 +44,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/euroView"
+            android:layout_alignBottom="@+id/euroView"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="2dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="6dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="1dp"
             android:layout_toEndOf="@+id/euroView"
             android:text="2.50"
             android:textColor="@color/logoYellow"
-            android:textSize="20sp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
     </RelativeLayout>

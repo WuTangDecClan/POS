@@ -12,6 +12,7 @@ import com.example.pos.model.Order
  */
 /* Ctrl + Q. - fixes the formatting */
 /* Annotates class to be a Room Database with a table (entity) of the Word class. */
+
 @Database(entities = [Customer::class, Order::class], version = 1, exportSchema = false) /* Export Schema keeps a Version history of the Database. */
 public abstract class POSRoomDatabase: RoomDatabase() {
 
@@ -39,4 +40,4 @@ public abstract class POSRoomDatabase: RoomDatabase() {
             }
         }
     }
-}
+} /* Ending Kotlin File. */

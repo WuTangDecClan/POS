@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.pos.listFragment"
+        android:name="com.example.pos.fragments.list.listFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.example.pos.addFragment"
+        android:name="com.example.pos.fragments.add.addFragment"
         android:label="fragment_add"
         tools:layout="@layout/fragment_add" >
         <action

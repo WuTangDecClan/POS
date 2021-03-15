@@ -4,55 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.list.listFragment">
+    tools:context=".MainBody.dashboard.ordersActivites.ActiveOrderActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="867dp"
-        android:layout_height="528dp"
+        android:layout_width="873dp"
+        android:layout_height="875dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:clipToPadding="false"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:listitem="@layout/custom_row" />
+        app:layout_constraintVertical_bias="0.64"
+        tools:listitem="@layout/active_order_item" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/floatingActionButton"
         android:layout_width="307dp"
         android:layout_height="68dp"
         android:layout_marginTop="88dp"
-        android:layout_marginEnd="268dp"
+        android:layout_marginEnd="68dp"
         android:layout_marginBottom="60dp"
         android:background="@drawable/pizaa_button2"
-        android:text="Add Customer"
+        android:text="Main Menu"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/recyclerview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <SearchView
-        android:id="@+id/customerSearchView"
-        android:layout_width="364dp"
-        android:layout_height="43dp"
-        android:layout_margin="16dp"
-        android:background="@drawable/custom_search_background"
-        android:commitIcon="@drawable/searchlogo_foreground"
-        app:defaultQueryHint="Search for a Customer"
-        app:layout_constraintBottom_toBottomOf="@+id/floatingActionButton"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
-        app:layout_constraintHorizontal_bias="0.829"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/recyclerview"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:queryHint="Search for a Customer" />
-
+        app:layout_constraintVertical_bias="0.01" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

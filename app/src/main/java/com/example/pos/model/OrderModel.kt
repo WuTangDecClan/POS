@@ -1,4 +1,4 @@
-package com.example.pos
+package com.example.pos.model
 
 /* Object for modeling data in the recycler view. */
 /* No need for Getters and Setters with Kotlin, adding properties to Food Item Object. */

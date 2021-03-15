@@ -1,4 +1,4 @@
-package com.example.pos
+package com.example.pos.MainBody.dashboard
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,14 +6,13 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.multiplerecyclerview.OrderAdapter
-import kotlinx.android.synthetic.main.activity_open_food.*
+import com.example.pos.*
+import com.example.pos.MainBody.dashboard.ordersActivites.*
+import com.example.pos.model.DataModel
 import kotlinx.android.synthetic.main.activity_order.*
-import kotlinx.android.synthetic.main.activity_order.view.*
-import kotlin.properties.Delegates
 
 const val INDEX = 0
 
@@ -28,13 +27,17 @@ class OrderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order)
 
-        val customerName: String = getIntent().getStringExtra("customerName").toString()
-        val customerNumber: String = getIntent().getStringExtra("customerNumber").toString()
-        val customerPostal: String = getIntent().getStringExtra("postalCode").toString()
-        val customerAddress: String = getIntent().getStringExtra("address").toString()
+        val customerName: String = intent.getStringExtra("customerName").toString()
+        val customerNumber: String = intent.getStringExtra("customerNumber").toString()
+        val customerPostal: String = intent.getStringExtra("postalCode").toString()
+        val customerAddress: String = intent.getStringExtra("address").toString()
 
-        insertCustomer(customerName, customerNumber, customerPostal, customerAddress)
 
+        if (customerName == "null") {
+
+        } else {
+            insertCustomer(customerName, customerNumber, customerPostal, customerAddress)
+        }
 
         customerButton.setOnClickListener { /* Customer onclick button: Gets taken to the customer screen. */
             val intent = Intent(this@OrderActivity, CustomerActivity::class.java)  /* Creating an Intent to go to Customer Activity. */
@@ -58,7 +61,13 @@ class OrderActivity : AppCompatActivity() {
         }
 
         complete_btn.setOnClickListener {
+            val total = textViewPrice.text.toString()
             val intent = Intent(this@OrderActivity, PaymentActivity::class.java)  /* Creating an Intent to go to Customer Activity. */
+            intent.putExtra("total", total) /* Adding the foodName to the intent. */
+            intent.putExtra("customerName", customerName) /* Adding the foodName to the intent. */
+            intent.putExtra("customerNumber", customerNumber) /* Adding the foodName to the intent. */
+            intent.putExtra("customerPostal", customerPostal) /* Adding the foodName to the intent. */
+            intent.putExtra("customerAddress", customerAddress) /* Adding the foodName to the intent. */
             startActivityForResult(intent,1) /* Starting Activity for result. */
         }
 
@@ -77,6 +86,30 @@ class OrderActivity : AppCompatActivity() {
         var temp = textViewPrice.text.toString().toDouble()
 
         Log.i("Order", "OnActivityResult.\n") /* Adding Logging information. */
+
+        if (resultCode == PAYMENT) {
+            //customer Information
+            val customerName: String = intent.getStringExtra("customerName").toString()
+            val customerNumber: String = intent.getStringExtra("customerNumber").toString()
+            val customerPostal: String = intent.getStringExtra("postalCode").toString()
+            val customerAddress: String = intent.getStringExtra("address").toString()
+
+            // Payment Information
+            val paymentType: String = data?.getStringExtra("paymentType").toString() /* storing the values from arguments returned. */
+            val paymentTotal: String = data?.getStringExtra("total").toString()
+
+            Toast.makeText(this, "$paymentType $paymentTotal", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this@OrderActivity, ActiveOrderActivity::class.java)  /* Creating an Intent to go to Customer Activity. */
+            intent.putExtra("paymentType", paymentType).toString()
+            intent.putExtra("paymentTotal", paymentTotal).toString()
+            intent.putExtra("customerName", customerName) /* Adding the foodName to the intent. */
+            intent.putExtra("customerNumber", customerNumber) /* Adding the foodName to the intent. */
+            intent.putExtra("customerPostal", customerPostal) /* Adding the foodName to the intent. */
+            intent.putExtra("customerAddress", customerAddress) /* Adding the foodName to the intent. */
+            startActivityForResult(intent,1) /* Starting Activity for result. */
+
+        }
 
         if (resultCode == RESULT_DELIVERY) {
             val charge: String = data?.getStringExtra("deliveryCharge").toString() /* storing the values from arguments returned. */
@@ -141,7 +174,13 @@ class OrderActivity : AppCompatActivity() {
 
     private fun insertCustomer(customerName: String, customerNumber: String, customerPostal: String, customerAddress: String) {
 
-        val newItem = DataModel(customerName = customerName, customerNumber = customerNumber, customerPostal = customerPostal, customerAddress = customerAddress, viewType = OrderAdapter.CUSTOMER) /* Adding the item with correct arguments */
+        val newItem = DataModel(
+            customerName = customerName,
+            customerNumber = customerNumber,
+            customerPostal = customerPostal,
+            customerAddress = customerAddress,
+            viewType = OrderAdapter.CUSTOMER
+        ) /* Adding the item with correct arguments */
         list.add(INDEX, newItem) /* Adding Item at Position Index. */
         orderAdapter.notifyItemInserted(INDEX) /* Notifying the Adapter of the addition. */
 
@@ -151,7 +190,11 @@ class OrderActivity : AppCompatActivity() {
 
         Toast.makeText(this, "Side Item Added!", Toast.LENGTH_SHORT).show() /* Toast Message to confirm insertion. */
 
-        val newItem = DataModel(sidePrice = "$price", sideName = "$name", viewType = OrderAdapter.SIDE_ORDER_TYPE_1) /* Adding the item with correct arguments */
+        val newItem = DataModel(
+            sidePrice = "$price",
+            sideName = "$name",
+            viewType = OrderAdapter.SIDE_ORDER_TYPE_1
+        ) /* Adding the item with correct arguments */
         list.add(INDEX, newItem) /* Adding Item at Position Index. */
         orderAdapter.notifyItemInserted(INDEX) /* Notifying the Adapter of the addition. */
     }
@@ -160,7 +203,13 @@ class OrderActivity : AppCompatActivity() {
 
         Toast.makeText(this, "Side Item Added!", Toast.LENGTH_SHORT).show() /* Toast Message to confirm insertion. */
 
-        val newItem = DataModel(sidePrice = "$price", sideName = "$name", topping1 = top1, topping2 = top2, viewType = OrderAdapter.SIDE_ORDER_TYPE_2) /* Adding the item with correct arguments */
+        val newItem = DataModel(
+            sidePrice = "$price",
+            sideName = "$name",
+            topping1 = top1,
+            topping2 = top2,
+            viewType = OrderAdapter.SIDE_ORDER_TYPE_2
+        ) /* Adding the item with correct arguments */
         list.add(INDEX, newItem) /* Adding Item at Position Index. */
         orderAdapter.notifyItemInserted(INDEX) /* Notifying the Adapter of the addition. */
     }
@@ -169,7 +218,10 @@ class OrderActivity : AppCompatActivity() {
 
         Toast.makeText(this, "Delivery Charge Added!", Toast.LENGTH_SHORT).show() /* Toast Message to confirm insertion. */
 
-        val newItem = DataModel(delivery ="$charge", viewType = OrderAdapter.DELIVERY_CHARGE) /* Adding the item with correct arguments */
+        val newItem = DataModel(
+            delivery = "$charge",
+            viewType = OrderAdapter.DELIVERY_CHARGE
+        ) /* Adding the item with correct arguments */
         list.add(INDEX, newItem) /* Adding Item at Position Index. */
         orderAdapter.notifyItemInserted(INDEX) /* Notifying the Adapter of the addition. */
     }
@@ -179,7 +231,12 @@ class OrderActivity : AppCompatActivity() {
 
         Toast.makeText(this, "Item added!", Toast.LENGTH_SHORT).show() /* Toast Message to confirm insertion. */
 
-        val newItem = DataModel(itemName = "$name",itemQuantity =  "$size",itemPrice =  "$price", viewType = OrderAdapter.NO_TOPPING) /* Adding the item with correct arguments */
+        val newItem = DataModel(
+            itemName = "$name",
+            itemQuantity = "$size",
+            itemPrice = "$price",
+            viewType = OrderAdapter.NO_TOPPING
+        ) /* Adding the item with correct arguments */
         list.add(INDEX, newItem) /* Adding Item at Position Index. */
         orderAdapter.notifyItemInserted(INDEX) /* Notifying the Adapter of the addition. */
     }
@@ -189,7 +246,16 @@ class OrderActivity : AppCompatActivity() {
 
         Toast.makeText(this, "Item added!", Toast.LENGTH_SHORT).show() /* Toast Message to confirm insertion. */
 
-        val newItem = DataModel("$name", "$size", "$price", "$top1", "$top2", "$top3", "$top4", viewType = OrderAdapter.TOPPINGS_4) /* Adding the item with correct arguments */
+        val newItem = DataModel(
+            "$name",
+            "$size",
+            "$price",
+            "$top1",
+            "$top2",
+            "$top3",
+            "$top4",
+            viewType = OrderAdapter.TOPPINGS_4
+        ) /* Adding the item with correct arguments */
         list.add(INDEX, newItem) /* Adding Item at Position Index. */
         orderAdapter.notifyItemInserted(INDEX) /* Notifying the Adapter of the addition. */
     }
@@ -198,7 +264,11 @@ class OrderActivity : AppCompatActivity() {
 
         Toast.makeText(this, "Open Food Added!", Toast.LENGTH_SHORT).show() /* Toast Message to confirm insertion. */
 
-        val newItem = DataModel(openFoodDetails = "$openFoodDetails", openFoodCharge = "$openFoodPrice",viewType = OrderAdapter.OPEN_FOOD_CHARGE) /* Adding the item with correct arguments */
+        val newItem = DataModel(
+            openFoodDetails = "$openFoodDetails",
+            openFoodCharge = "$openFoodPrice",
+            viewType = OrderAdapter.OPEN_FOOD_CHARGE
+        ) /* Adding the item with correct arguments */
         list.add(INDEX, newItem) /* Adding Item at Position Index. */
         orderAdapter.notifyItemInserted(INDEX) /* Notifying the Adapter of the addition. */
     }
@@ -231,6 +301,14 @@ class OrderActivity : AppCompatActivity() {
         intent.putExtra("itemName", "$texty") /* Adding the foodName to the intent. */
         intent.putExtra("itemPrice", "$price") /* Adding the foodPrice to the intent. */
         startActivityForResult(intent,1) /* Starting Activity for result. */
+    }
+
+    fun removeItem(view: View) {
+        val index = 0
+
+        list.removeAt(index)
+        orderAdapter.notifyItemRemoved(INDEX) /* Notifying the Adapter of the deletion. */
+
     }
 }
 

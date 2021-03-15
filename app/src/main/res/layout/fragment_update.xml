@@ -7,6 +7,21 @@
     android:padding="24dp"
     tools:context=".fragments.update.UpdateFragment">
 
+    <TextView
+        android:id="@+id/updateInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="Update, Delete or Choose a Customer for an Order"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/updateTextName"
         android:layout_width="wrap_content"
@@ -15,6 +30,11 @@
         android:ems="15"
         android:hint="Name"
         android:inputType="textPersonName"
+        android:backgroundTint="@color/shopColour"
+        android:textColor="@color/logoYellow"
+        android:textColorHint="@color/logoYellow"
+        android:textCursorDrawable="@color/logoYellow"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +46,11 @@
         android:ems="15"
         android:hint="Phone Number"
         android:inputType="phone"
+        android:backgroundTint="@color/shopColour"
+        android:textColor="@color/logoYellow"
+        android:textColorHint="@color/logoYellow"
+        android:textCursorDrawable="@color/logoYellow"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/updateTextName" />
@@ -38,6 +63,11 @@
         android:ems="15"
         android:hint="Eircode"
         android:inputType="textPostalAddress"
+        android:backgroundTint="@color/shopColour"
+        android:textColor="@color/logoYellow"
+        android:textColorHint="@color/logoYellow"
+        android:textCursorDrawable="@color/logoYellow"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/updateTextNumber" />
@@ -50,6 +80,11 @@
         android:hint="Address Line 1 \nAddress Line 2"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:backgroundTint="@color/shopColour"
+        android:textColor="@color/logoYellow"
+        android:textColorHint="@color/logoYellow"
+        android:textCursorDrawable="@color/logoYellow"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/updatePostalAddress" />
@@ -90,14 +125,14 @@
         android:id="@+id/pickBtn"
         android:layout_width="307dp"
         android:layout_height="68dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/pizza_button1"
         android:text="Pick Customer"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/updateTextName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/deleteBtn"
+        app:layout_constraintStart_toStartOf="@+id/updateBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

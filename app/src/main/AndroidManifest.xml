@@ -12,39 +12,50 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.POS"
         android:windowSoftInputMode="adjustPan">
-        <activity android:name=".SideActivity"></activity>
         <activity
-            android:name=".OpenFoodActivity"
+            android:name=".MainBody.dashboard.ordersActivites.ActiveOrderActivity"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="stateHidden"  />
         <activity
-            android:name=".DeliveryActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".PizzaActivity"
+            android:name=".MainBody.dashboard.ordersActivites.PaymentActivity"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".ManagementActivity"
+            android:name=".MainBody.dashboard.ordersActivites.SideActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MainBody.dashboard.OpenFoodActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MainBody.dashboard.ordersActivites.DeliveryActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".OrderActivity"
+            android:name=".MainBody.dashboard.ordersActivites.PizzaActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MainBody.dashboard.ManagementActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".CustomerActivity"
+            android:name=".MainBody.dashboard.OrderActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MainBody.dashboard.CustomerActivity"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".MainBody.registration.RegisterActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".MainBody.registration.LoginActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Dashboard"
+            android:name=".MainBody.dashboard.Dashboard"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MainBody.MainActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

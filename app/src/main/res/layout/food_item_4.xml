@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/cardViewItem1"
-    android:layout_width="wrap_content"
+    android:layout_width="400dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp"
@@ -18,7 +18,7 @@
 
         <TextView
             android:id="@+id/productNameView4"
-            android:layout_width="249dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="2dp"
             android:text="Coliemore Harbour Pizza"
@@ -31,19 +31,19 @@
             android:layout_width="28dp"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/productPriceView4"
-            android:layout_marginStart="2dp"
-            android:layout_marginLeft="2dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="1dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/productNameView4"
             android:text="12"
-            android:textColor="@color/shopColour"
+            android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/productQuantitySizeView4"
-            android:layout_width="48dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/productQuantityView4"
             android:layout_marginStart="0dp"
@@ -60,12 +60,12 @@
             android:id="@+id/productQuantityCostView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
+            android:layout_marginStart="7dp"
             android:layout_marginLeft="2dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/productQuantitySizeView4"
             android:text="€"
-            android:textColor="@color/shopColour"
+            android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -79,9 +79,9 @@
             android:layout_marginTop="0dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/productQuantityCostView4"
-            android:text="14.50"
-            android:textColor="@color/shopColour"
-            android:textSize="20sp"
+            android:text="14.5"
+            android:textColor="@color/logoYellow"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView

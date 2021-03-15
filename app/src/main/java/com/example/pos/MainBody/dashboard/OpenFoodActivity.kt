@@ -1,4 +1,4 @@
-package com.example.pos
+package com.example.pos.MainBody.dashboard
 
 import android.content.Intent
 import android.graphics.Color
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
+import com.example.pos.R
 import kotlinx.android.synthetic.main.activity_delivery.*
 import kotlinx.android.synthetic.main.activity_open_food.*
 

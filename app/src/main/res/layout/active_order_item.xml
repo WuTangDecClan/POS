@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rowConstraintLayout"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
     <androidx.cardview.widget.CardView
@@ -28,20 +28,37 @@
 
             <TextView
                 android:id="@+id/nameView"
-                android:layout_width="243dp"
+                android:layout_width="223dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="0dp"
                 android:text="Declan Thorne"
                 android:textColor="@color/shopColour"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/address1View"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameView"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="6dp"
+                android:text="123 Fakelands,\nHigher up Road,\nDublin"
+                android:textColor="@color/logoYellow"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/mobileView"
-                android:layout_width="170dp"
+                android:layout_width="144dp"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/productPriceView"
-                android:layout_marginStart="2dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginEnd="100dp"
@@ -53,29 +70,51 @@
 
             <TextView
                 android:id="@+id/eircodeView"
-                android:layout_width="130dp"
+                android:layout_width="87dp"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/mobileView"
-                android:layout_marginStart="0dp"
+                android:layout_below="@+id/mobileView"
+                android:layout_alignEnd="@+id/mobileView"
+                android:layout_marginStart="43dp"
                 android:layout_marginLeft="0dp"
-                android:layout_marginEnd="0dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="1dp"
-                android:layout_toEndOf="@+id/mobileView"
+                android:layout_toEndOf="@+id/nameView"
                 android:text="A96 K4D8"
                 android:textColor="@color/logoYellow"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/address1View"
+                android:id="@+id/paymentView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nameView"
-                android:layout_marginStart="0dp"
+                android:layout_alignTop="@+id/productPriceView"
+                android:layout_marginStart="20dp"
                 android:layout_marginLeft="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="6dp"
-                android:text="123 Fakelands,\nHigher up Road,\nDublin"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="100dp"
+                android:layout_toEndOf="@+id/mobileView"
+                android:gravity="center"
+                android:text="Gary's Gourmet Website"
+                android:textColor="@color/shopColour"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/paymentAmountView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/paymentView"
+                android:layout_alignEnd="@+id/paymentView"
+                android:layout_marginStart="144dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="-5dp"
+                android:layout_marginBottom="1dp"
+                android:layout_toEndOf="@+id/eircodeView"
+                android:gravity="center"
+                android:text="47.00"
                 android:textColor="@color/logoYellow"
                 android:textSize="20sp"
                 android:textStyle="bold" />

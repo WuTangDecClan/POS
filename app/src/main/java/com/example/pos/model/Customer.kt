@@ -14,6 +14,7 @@ data class Customer(
     val address: String,
     val eircode: String,
     val mobile: String
+    //val firebaseID: String? = null
 ) : Parcelable /*Allows us to pass customer info as arguments so it can be updated. */
 
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeliveryActivity">
+    tools:context=".MainBody.dashboard.ordersActivites.DeliveryActivity">
 
     <TextView
         android:id="@+id/deliveryInstructions"
@@ -94,8 +94,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/threeFiftyButton"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="@+id/threeButton"
-        app:layout_constraintTop_toBottomOf="@+id/threeButton" />
+        app:layout_constraintTop_toBottomOf="@+id/threeButton"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

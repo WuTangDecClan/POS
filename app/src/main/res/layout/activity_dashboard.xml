@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dashboard"
+    tools:context=".MainBody.dashboard.Dashboard"
     android:background="@color/white"
     android:focusable="true"
     android:focusableInTouchMode="true">
@@ -193,6 +193,8 @@
         android:layout_marginTop="59dp"
         android:layout_marginBottom="120dp"
         android:text="tv_user_id"
+        android:textColor="@color/logoYellow"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toStartOf="@+id/garysImageView"
         app:layout_constraintStart_toStartOf="parent"
