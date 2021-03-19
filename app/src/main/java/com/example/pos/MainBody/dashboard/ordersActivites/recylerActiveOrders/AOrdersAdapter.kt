@@ -10,15 +10,15 @@ import com.example.pos.R
 import com.example.pos.model.ActiveOrderModel
 import kotlinx.android.synthetic.main.active_order_item.view.*
 
-class AOrdersAdapter(private val aorderList: List<ActiveOrderModel> ) : RecyclerView.Adapter<AOrdersAdapter.AOrderViewHolder>() {
+class AOrdersAdapter(private var aorderList: List<ActiveOrderModel> ) : RecyclerView.Adapter<AOrdersAdapter.AOrderViewHolder>() {
 
     class AOrderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val nameView: TextView = view.nameView
-        val addressView: TextView = view.address1View
-        val mobileView: TextView = view.mobileView
-        val eircodeView: TextView = view.eircodeView
-        val paymentView: TextView = view.paymentView
-        val paymentAmountView: TextView = view.paymentAmountView
+        val nameView = view.nameView
+        val addressView = view.address1View
+        val mobileView = view.mobileView
+        val eircodeView = view.eircodeView
+        val paymentView = view.paymentView
+        val paymentAmountView = view.paymentAmountView
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AOrderViewHolder {
@@ -41,5 +41,10 @@ class AOrdersAdapter(private val aorderList: List<ActiveOrderModel> ) : Recycler
 
         holder.paymentAmountView.text = currentItem.paymentAmount
         holder.paymentView.text = currentItem.paymentType
+    }
+
+    fun updateList(list: List<ActiveOrderModel> ) {
+        this.aorderList = list
+        notifyDataSetChanged()
     }
 }

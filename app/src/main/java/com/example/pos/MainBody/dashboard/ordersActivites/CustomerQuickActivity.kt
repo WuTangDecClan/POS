@@ -1,15 +1,14 @@
-package com.example.pos.fragments.add
+package com.example.pos.MainBody.dashboard.ordersActivites
 
-import android.content.ContentValues.TAG
+import android.content.ContentValues
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.pos.MainBody.dashboard.OrderActivity
 import com.example.pos.R
 import com.example.pos.model.Customer
 import com.example.pos.viewmodel.POSViewModel
@@ -17,52 +16,59 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_customer_quick.*
+import kotlinx.android.synthetic.main.activity_customer_quick.add_btn
+import kotlinx.android.synthetic.main.activity_customer_quick.editTextName
+import kotlinx.android.synthetic.main.activity_customer_quick.editTextNumber
+import kotlinx.android.synthetic.main.activity_customer_quick.editTextPostalAddress
+import kotlinx.android.synthetic.main.activity_customer_quick.editTextTextAddress
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 
-class addFragment : Fragment() {
+const val CUSTOMER_CHOICE = 23
+
+class CustomerQuickActivity : AppCompatActivity() {
 
     private lateinit var _posViewModel: POSViewModel /* Storing the View Model in variable posViewModel. */
-    private lateinit var database:FirebaseDatabase
+    private lateinit var database: FirebaseDatabase
     private lateinit var reference: DatabaseReference
 
     /* Access a Cloud Firestore instance from the Activity. */
     val db = Firebase.firestore
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        /* Inflate the layout for this fragment. */
-        val view = inflater.inflate(R.layout.fragment_add, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_customer_quick)
+
         /* Creates ViewModelProvider. This will create ViewModels and retain them in a store of the given ViewModelStoreOwner. */
         _posViewModel = ViewModelProvider(this).get(POSViewModel::class.java)
-
-
         database = FirebaseDatabase.getInstance("https://pos-system-317c9-default-rtdb.europe-west1.firebasedatabase.app/")
         reference = database.getReference("Users")
 
         /* If the user clicks on the add button. */
-        view.add_btn.setOnClickListener {
+        add_btn.setOnClickListener {
             insertDataToDatabase()  /* Method to insert the data into the database is called. */
         }
-
-        return view /* Returning the view */
     }
-
     private fun insertDataToDatabase() { /* Getting the texts and adding them to the Customer Database */
         val name = editTextName.text.toString() /* Getting the ediText Name, converting to a String and storing it as name. */
         val address = editTextTextAddress.text.toString() /* Getting the ediText Address, converting to a String and storing it as address. */
         val eircode = editTextPostalAddress.text.toString() /* Getting the ediText eircode, converting to a String and storing it as eircode. */
         val mobile = editTextNumber.text.toString() /* Getting the ediText mobile, converting to a String and storing it as mobile. */
 
+        /* Creating an intent that when called will go to OrderActivity.kt. */
+        val intent = Intent()  /* Creating an Intent. */
+        intent.putExtra("customerName", name) /* Adding name as extra data. */
+        intent.putExtra("customerNumber", mobile) /* Adding number as extra data. */
+        intent.putExtra("postalCode", eircode) /* Adding eircode as extra data. */
+        intent.putExtra("address", address) /* Adding address as extra data. */
+
         var id = reference.push().key
         /* Creating a Customer Object. Using all the stored variables containing user imputed information and storing in val Customer an instance of Customer Object. */
         val customer = Customer(0, name, address, eircode, mobile)
         /* Adding Customer to the Room Database. */
         _posViewModel.addCustomer(customer)
-        /* Releasing Toast Message to notify that the customer has been successfully added. */
 
         /* Creating a new Customer.  */
         val cust = hashMapOf(
@@ -76,17 +82,14 @@ class addFragment : Fragment() {
         db.collection("customers")
             .add(cust)
             .addOnSuccessListener { documentReference ->
-                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
             }
             .addOnFailureListener { e ->
-                Log.w(TAG, "Error adding document", e)
+                Log.w(ContentValues.TAG, "Error adding document", e)
             }
 
-        Toast.makeText(requireContext(), "$name $id was Successfully added!", Toast.LENGTH_SHORT).show()
-
-        /* Returning to the List Fragment. */
-        findNavController().navigate(R.id.action_addFragment_to_listFragment)
-
+        setResult(CUSTOMER_CHOICE, intent) /* Setting the Result to pass the OK (-1) Result and including the intent with its data. */
+        finish() /* Ending the  Activity. */
     }
 
     /* Printing onStart() to Logcat. */
@@ -119,4 +122,4 @@ class addFragment : Fragment() {
         Log.i("", "OnDestroy: AddFragment.\n")
     }
 
-} /* Ending Fragment. */
+} /* Ending Activity. */

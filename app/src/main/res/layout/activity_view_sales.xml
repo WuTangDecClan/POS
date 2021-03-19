@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainBody.dashboard.ViewSalesActivity">
+
+
+    <TextView
+        android:id="@+id/salesInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="View the Sales for Today"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cashView"
+        android:layout_width="242dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="404dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="Cash Sales"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salesInstructions" />
+
+    <TextView
+        android:id="@+id/cashAmountView"
+        android:layout_width="114dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="€"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cashView"
+        app:layout_constraintTop_toBottomOf="@+id/salesInstructions" />
+
+    <TextView
+        android:id="@+id/garyView"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="56dp"
+        android:ems="15"
+        android:text="Gary's Gourmet Pizza Website Sales"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cashView" />
+
+    <TextView
+        android:id="@+id/garyAmountView"
+        android:layout_width="114dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="€"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/garyView"
+        app:layout_constraintTop_toBottomOf="@+id/cashAmountView" />
+
+    <TextView
+        android:id="@+id/justEatView"
+        android:layout_width="242dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="404dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="Just Eat Sales"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/garyView" />
+
+    <TextView
+        android:id="@+id/justEatAmountView"
+        android:layout_width="114dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="€"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/justEatView"
+        app:layout_constraintTop_toBottomOf="@+id/garyAmountView" />
+
+    <TextView
+        android:id="@+id/deliverooView"
+        android:layout_width="242dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="404dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="Deliveroo Sales"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/justEatView" />
+
+    <TextView
+        android:id="@+id/deliverooAmountView"
+        android:layout_width="114dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="€"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/deliverooView"
+        app:layout_constraintTop_toBottomOf="@+id/justEatAmountView" />
+
+    <TextView
+        android:id="@+id/visaView"
+        android:layout_width="242dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="404dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="Visa Sales"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deliverooView" />
+
+    <TextView
+        android:id="@+id/visaAmountView"
+        android:layout_width="114dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="€"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/visaView"
+        app:layout_constraintTop_toBottomOf="@+id/deliverooView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

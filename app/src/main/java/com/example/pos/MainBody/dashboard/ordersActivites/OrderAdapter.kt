@@ -1,10 +1,15 @@
 package com.example.multiplerecyclerview
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pos.MainBody.dashboard.OrderActivity
+import com.example.pos.MainBody.dashboard.ordersActivites.DeliveryActivity
+import com.example.pos.MainBody.dashboard.ordersActivites.SIDE_CODE_1
 import com.example.pos.model.DataModel
 import com.example.pos.R
 import kotlinx.android.synthetic.main.openfood_charge.view.*
@@ -170,8 +175,16 @@ class OrderAdapter(val context: Context, val items: ArrayList<DataModel>) :
         fun  onItemClick()
     }
 
-    class ViewHolder2(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder2(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
         var deliveryPrice = view.deliveryPriceView
+        val intent: Intent? = null
+        init {
+            view.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+
+        }
     }
 
     class ViewHolder3(view: View) : RecyclerView.ViewHolder(view) {

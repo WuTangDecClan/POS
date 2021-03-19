@@ -27,7 +27,7 @@ class ManagementActivity : AppCompatActivity() {
         }
 
         salesButton.setOnClickListener {
-            val intent = Intent(this@ManagementActivity, Dashboard::class.java)  /* Creating an Intent to go to Dashboard. */
+            val intent = Intent(this@ManagementActivity, ViewSalesActivity::class.java)  /* Creating an Intent to go to Dashboard. */
             startActivity(intent) /* Starting Activity. */
 
         }

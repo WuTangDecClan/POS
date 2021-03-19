@@ -10,14 +10,14 @@
         android:id="@+id/paymentInstructions"
         android:layout_width="317dp"
         android:layout_height="45dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="28dp"
         android:ems="15"
         android:text="Choose a Payment Method"
         android:textColor="@color/shopColour"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintHorizontal_bias="0.449"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,17 +41,17 @@
         android:layout_width="221dp"
         android:layout_height="71dp"
         android:layout_marginTop="76dp"
-        android:layout_marginEnd="244dp"
+        android:layout_marginEnd="388dp"
         android:background="@drawable/pizaa_button3"
+        android:tag="Cash"
         android:text="Amount Due:"
         android:textColor="@color/white"
         android:textSize="16dp"
         android:textStyle="bold"
-        android:tag="Cash"
         app:layout_constraintBottom_toTopOf="@+id/moneyEntry"
         app:layout_constraintEnd_toStartOf="@+id/justEatView"
         app:layout_constraintTop_toBottomOf="@+id/paymentInstructions"
-        app:layout_constraintVertical_bias="0.307" />
+        app:layout_constraintVertical_bias="0.285" />
 
     <TextView
         android:id="@+id/paymentMoneySymbol"
@@ -69,6 +69,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <EditText
         android:id="@+id/moneyEntry"
         android:layout_width="249dp"
@@ -77,34 +78,33 @@
         android:backgroundTint="@color/shopColour"
         android:ems="15"
         android:hint="Cash Given"
-        android:text="0"
         android:inputType="text"
+        android:text="0"
         android:textColor="@color/shopColour"
         android:textColorHint="@color/logoYellow"
         android:textCursorDrawable="@color/logoYellow"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/garysView"
         app:layout_constraintEnd_toStartOf="@+id/justEatView"
-        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/amountReturnButton"
         android:layout_width="221dp"
         android:layout_height="71dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="244dp"
         android:background="@drawable/pizaa_button3"
-        android:text="Change Due:"
         android:tag="Cash"
+        android:text="Change Due:"
         android:textColor="@color/white"
         android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/garysView"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/moneyEntry" />
-
 
     <ImageView
         android:id="@+id/justEatView"
@@ -122,7 +122,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="115dp"
+        android:layout_marginEnd="44dp"
         android:tag="Deliveroo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paymentInstructions"
@@ -132,30 +132,96 @@
         android:id="@+id/garysView"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="80dp"
         android:tag="Gary's Gourmet Website"
         app:layout_constraintEnd_toStartOf="@+id/visaView"
         app:layout_constraintTop_toBottomOf="@+id/justEatView"
         app:srcCompat="@drawable/garrylogo" />
 
+
     <ImageView
         android:id="@+id/visaView"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="115dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="44dp"
         android:tag="Visa Payment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deliverooView"
         app:srcCompat="@drawable/visa_mastercard_logo" />
 
+    <TextView
+        android:id="@+id/orderTypeInstructions"
+        android:layout_width="317dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="424dp"
+        android:ems="15"
+        android:text="Choose an Order Type"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentType" />
+
+    <TextView
+        android:id="@+id/orderMethodType"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginBottom="32dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="Collection"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/delivery_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderTypeInstructions"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/delivery_btn"
+        android:layout_width="178dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="384dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/pizaa_button2"
+        android:text="Delivery"
+        android:tag="Delivery"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/completePayment_btn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/collection_btn"
+        android:layout_width="178dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="468dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/pizaa_button2"
+        android:text="Collection"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:tag="Collection"
+        app:layout_constraintBottom_toTopOf="@+id/completePayment_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/delivery_btn" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/completePayment_btn"
         android:layout_width="247dp"
         android:layout_height="84dp"
-        android:layout_marginEnd="540dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="548dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/pizza_button3"
         android:text="Complete Payment"
         android:textColor="@color/white"

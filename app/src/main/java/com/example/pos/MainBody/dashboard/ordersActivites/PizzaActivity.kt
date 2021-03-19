@@ -8,7 +8,15 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.pos.R
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.getField
+import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_payment.*
 import kotlinx.android.synthetic.main.activity_pizza.*
+import java.util.*
 
 const val SIZE_SMALL = 10
 const val SIZE_LARGE = 12
@@ -22,9 +30,20 @@ const val RESULT_CODE_2 = 2
 
 
 class PizzaActivity : AppCompatActivity() {
+
+    private lateinit var database: FirebaseDatabase
+    private lateinit var reference: DatabaseReference
+
+    /* Access a Cloud Firestore instance from the Activity. */
+    val db = Firebase.firestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pizza) /* Loading this layout if the activity is a pizza. */
+
+        database = FirebaseDatabase.getInstance("https://pos-system-317c9-default-rtdb.europe-west1.firebasedatabase.app/")
+        reference = database.getReference("Food")
+
 
         val pizzaName: TextView = findViewById(R.id.pizzaName)
         pizzaName.text = intent.getStringExtra("itemName").toString() /* Adding the name of the pizza to Screen. */
@@ -115,11 +134,33 @@ class PizzaActivity : AppCompatActivity() {
                     intent.putExtra("topping3", top3)
                     intent.putExtra("topping4", top4)
                     setResult(RESULT_CODE_2, intent) /* Setting the Result to pass the OK (-1) Result and including the intent with its data. */
-                    finish() /* Ending the  Activity. */
                 } else {
                     setResult(RESULT_CODE_1, intent) /* Setting the Result to pass the OK (-1) Result and including the intent with its data. */
-                    finish() /* Ending the  Activity. */
                 }
+                val c = Calendar.getInstance()
+
+                val year = c.get(Calendar.YEAR)
+                val month = c.get(Calendar.MONTH)+1
+                val day = c.get(Calendar.DAY_OF_MONTH)
+
+                val foodNam = itemName.replace(" ","")
+                val foodSiz = itemSize.replace(" ","")
+
+                val docRef =  db.collection("Food Sales - $day.$month.$year").document("$foodNam$foodSiz")
+                docRef.get()
+                    .addOnSuccessListener { document ->
+                        if(document.exists()) {
+                            docRef.update("Sales Number", FieldValue.increment(1))
+                        } else {
+                            /* Creating a new Order.  */
+                            val food = hashMapOf(
+                                "Item Name" to itemName,
+                                "Item Size" to itemSize,
+                                "Sales Number" to 1)
+                            db.collection("Food Sales - $day.$month.$year").document("$foodNam$foodSiz").set(food)
+                        }
+                    }
+                finish() /* Ending the  Activity. */
             } else { /* If the size hasn't been picked then change the colors of the inches and warn the user. */
                 tenInchButton.setTextColor(Color.rgb(202,180,156))
                 twelveInchButton.setTextColor(Color.rgb(202,180,156))

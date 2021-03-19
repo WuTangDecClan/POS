@@ -7,15 +7,31 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.pos.R
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_side.*
+import java.util.*
 
 const val SIDE_CODE_1 = 52
 const val SIDE_CODE_2 = 53
 
 class SideActivity : AppCompatActivity() {
+
+    private lateinit var database: FirebaseDatabase
+    private lateinit var reference: DatabaseReference
+
+    /* Access a Cloud Firestore instance from the Activity. */
+    val db = Firebase.firestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_side)
+
+        database = FirebaseDatabase.getInstance("https://pos-system-317c9-default-rtdb.europe-west1.firebasedatabase.app/")
+        reference = database.getReference("Food")
 
         val sideName: TextView = findViewById(R.id.sideName)
         sideName.text = intent.getStringExtra("itemName").toString() /* Adding the name of the pizza to Screen. */
@@ -50,11 +66,33 @@ class SideActivity : AppCompatActivity() {
                 intent.putExtra("topping1", top1)
                 intent.putExtra("topping2", top2)
                 setResult(SIDE_CODE_2, intent) /* Setting the Result to pass the OK (-1) Result and including the intent with its data. */
-                finish() /* Ending the  Activity. */
             } else {
                 setResult(SIDE_CODE_1, intent) /* Setting the Result to pass the OK (-1) Result and including the intent with its data. */
-                finish() /* Ending the  Activity. */
             }
+
+            val c = Calendar.getInstance()
+
+            val year = c.get(Calendar.YEAR)
+            val month = c.get(Calendar.MONTH)+1
+            val day = c.get(Calendar.DAY_OF_MONTH)
+
+            var foodNam = itemName.replace(" ","")
+
+            val docRef =  db.collection("Food Sales - $day.$month.$year").document("$foodNam")
+            docRef.get()
+                .addOnSuccessListener { document ->
+                    if(document.exists()) {
+                        docRef.update("Sales Number", FieldValue.increment(1))
+                    } else {
+                        /* Creating a new Order.  */
+                        val food = hashMapOf(
+                            "Item Name" to itemName,
+                            "Item Price" to itemPrice,
+                            "Sales Number" to 1)
+                        db.collection("Food Sales - $day.$month.$year").document("$foodNam").set(food)
+                    }
+                }
+            finish() /* Ending the  Activity. */
         }
     }
 

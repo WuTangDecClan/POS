@@ -12,10 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.POS"
         android:windowSoftInputMode="adjustPan">
+        <activity android:name=".MainBody.dashboard.ordersActivites.CustomerQuickActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MainBody.dashboard.ViewSalesActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".MainBody.dashboard.ordersActivites.ActiveOrderActivity"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden"  />
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".MainBody.dashboard.ordersActivites.PaymentActivity"
             android:screenOrientation="landscape"

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainBody.dashboard.ordersActivites.CustomerQuickActivity">
+
+    <TextView
+        android:id="@+id/addCustomerInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="128dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="Add a Customer for the Order"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:backgroundTint="@color/shopColour"
+        android:ems="15"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:textColor="@color/shopColour"
+        android:textColorHint="@color/logoYellow"
+        android:textCursorDrawable="@color/logoYellow"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addCustomerInstructions" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="15"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:backgroundTint="@color/shopColour"
+        android:textColor="@color/shopColour"
+        android:textColorHint="@color/logoYellow"
+        android:textCursorDrawable="@color/logoYellow"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+    <EditText
+        android:id="@+id/editTextPostalAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:ems="15"
+        android:hint="Eircode"
+        android:backgroundTint="@color/shopColour"
+        android:textColor="@color/shopColour"
+        android:textColorHint="@color/logoYellow"
+        android:textCursorDrawable="@color/logoYellow"
+        android:textStyle="bold"
+        android:inputType="textPostalAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+
+    <EditText
+        android:id="@+id/editTextTextAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="15"
+        android:hint="Address Line 1 \nAddress Line 2"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:backgroundTint="@color/shopColour"
+        android:textColor="@color/shopColour"
+        android:textColorHint="@color/logoYellow"
+        android:textCursorDrawable="@color/logoYellow"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPostalAddress" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add_btn"
+        android:layout_width="307dp"
+        android:layout_height="68dp"
+        android:background="@drawable/pizaa_button2"
+        android:text="Add to Order"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextAddress"
+        app:layout_constraintVertical_bias="0.295" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

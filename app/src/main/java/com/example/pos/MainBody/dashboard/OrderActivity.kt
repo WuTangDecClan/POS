@@ -33,6 +33,7 @@ class OrderActivity : AppCompatActivity() {
         val customerAddress: String = intent.getStringExtra("address").toString()
 
 
+
         if (customerName == "null") {
 
         } else {
@@ -40,7 +41,7 @@ class OrderActivity : AppCompatActivity() {
         }
 
         customerButton.setOnClickListener { /* Customer onclick button: Gets taken to the customer screen. */
-            val intent = Intent(this@OrderActivity, CustomerActivity::class.java)  /* Creating an Intent to go to Customer Activity. */
+            val intent = Intent(this@OrderActivity, CustomerQuickActivity::class.java)  /* Creating an Intent to go to Customer Activity. */
             startActivityForResult(intent,1) /* Starting Activity for result. */
         }
 
@@ -140,6 +141,18 @@ class OrderActivity : AppCompatActivity() {
                 insertItem(name = itemName, price = itemPrice, size = itemSize)
             else if (resultCode == RESULT_CODE_2)
                 insertItem4(name = itemName, price = itemPrice, size = itemSize, top1 = top1, top2 = top2, top3 = top3, top4 = top4)
+        }
+
+        if (resultCode == CUSTOMER_CHOICE) {
+            /* Adding the Customer to the Order. */
+            val customerName: String = data?.getStringExtra("customerName").toString()
+            val customerNumber: String = data?.getStringExtra("customerNumber").toString()
+            val customerPostal: String = data?.getStringExtra("postalCode").toString()
+            val customerAddress: String = data?.getStringExtra("address").toString()
+
+            Toast.makeText(this, "$customerName", Toast.LENGTH_LONG).show() /* Toast Message to confirm insertion. */
+
+            insertCustomer(customerName, customerNumber, customerPostal, customerAddress)
         }
 
         if (resultCode == SIDE_CODE_1 || resultCode == SIDE_CODE_2) {
