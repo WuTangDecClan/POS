@@ -31,22 +31,22 @@ class Dashboard : AppCompatActivity() {
 
         customersButton.setOnClickListener {
             val intent = Intent(this@Dashboard, CustomerActivity::class.java)  /* Creating an Intent to go to CustomerActivity. */
-            startActivity(intent) /* Starting Activity. */
+            startActivity(intent)                /* Starting Activity. - Shows the Database containing customers. */
         }
 
         placeOrderButton.setOnClickListener {
             val intent = Intent(this@Dashboard, OrderActivity::class.java)  /* Creating an Intent to go to OrderActivity. */
-            startActivity(intent) /* Starting Activity. */
+            startActivity(intent) /* Starting Activity. - Shows the screen for making orders. */
         }
 
         ordersButton.setOnClickListener {
-            val intent = Intent(this@Dashboard, ActiveOrderActivity::class.java)  /* Creating an Intent to go to LoginActivity. */
-            startActivity(intent) /* Starting Activity. */
+            val intent = Intent(this@Dashboard, ActiveOrderActivity::class.java)  /* Creating an Intent to go to ActiveOrderActivity. */
+            startActivity(intent) /* Starting Activity. - Shows orders that have been created. */
         }
 
         managementButton.setOnClickListener {
             val intent = Intent(this@Dashboard, ManagementActivity::class.java)  /* Creating an Intent to go to ManagementActivity. */
-            startActivity(intent) /* Starting Activity. */
+            startActivity(intent) /* Starting Activity. - Shows the options for viewing sales and logout. */
         }
     }
 

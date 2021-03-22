@@ -6,58 +6,243 @@
     android:layout_height="match_parent"
     tools:context=".MainBody.dashboard.ViewSalesActivity">
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/printButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/pizza_button3"
+        android:text="@string/print_sales_today_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/percentagesButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/pizaa_button3"
+        android:text="@string/percentages_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/printButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/itemsButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/pizaa_button2"
+        android:text="@string/individual_sales_sheet_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/percentagesButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/salesInstructions"
-        android:layout_width="wrap_content"
+        android:id="@+id/salesToday"
+        android:layout_width="208dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="472dp"
         android:ems="15"
         android:gravity="center"
-        android:text="View the Sales for Today"
+        android:text="@string/sales_today_view"
         android:textColor="@color/shopColour"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cashSignView"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.295" />
+
+    <TextView
+        android:id="@+id/salesTodayDate"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="472dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="@string/placeholder_date"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salesToday" />
+
+    <TextView
+        android:id="@+id/salesMonth"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="36dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="@string/sales_month_view"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/salesToday"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/salesMonthDate"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="0dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="@string/placeholder_date"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/salesTodayDate"
+        app:layout_constraintTop_toBottomOf="@+id/salesMonth" />
+
+    <TextView
+        android:id="@+id/salesYear"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="36dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="@string/sales_year_view"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/salesMonth"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/salesYearDate"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="@string/placeholder_date"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/salesMonthDate"
+        app:layout_constraintTop_toBottomOf="@+id/salesYear" />
 
     <TextView
         android:id="@+id/cashView"
         android:layout_width="242dp"
         android:layout_height="35dp"
-        android:layout_marginStart="404dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="156dp"
         android:ems="15"
-        android:text="Cash Sales"
+        android:text="@string/cash_sales_view"
         android:textColor="@color/shopColour"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/salesInstructions" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/cashAmountView"
-        android:layout_width="114dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="60dp"
+        android:id="@+id/cashSignView"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="156dp"
         android:ems="15"
-        android:text="€"
+        android:text="@string/euro_sign"
         android:textColor="@color/logoYellow"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/cashView"
-        app:layout_constraintTop_toBottomOf="@+id/salesInstructions" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cashAmountTodayView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="84dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cashSignView"
+        app:layout_constraintTop_toBottomOf="@+id/salesToday" />
+
+    <TextView
+        android:id="@+id/cashSign2View"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="48dp"
+        android:ems="15"
+        android:text="@string/euro_sign"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cashAmountTodayView"
+        app:layout_constraintTop_toBottomOf="@+id/salesMonthDate" />
+
+    <TextView
+        android:id="@+id/cashAmountMonthView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cashSign2View"
+        app:layout_constraintTop_toBottomOf="@+id/salesMonthDate" />
+
+    <TextView
+        android:id="@+id/cashSign3View"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="48dp"
+        android:ems="15"
+        android:text="@string/euro_sign"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cashAmountMonthView"
+        app:layout_constraintTop_toBottomOf="@+id/salesYearDate" />
+
+    <TextView
+        android:id="@+id/cashAmountYearView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cashSign3View"
+        app:layout_constraintTop_toBottomOf="@+id/salesYearDate" />
 
     <TextView
         android:id="@+id/garyView"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginStart="208dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="60dp"
         android:ems="15"
-        android:text="Gary's Gourmet Pizza Website Sales"
+        android:text="@string/gary_s_gourmet_pizza_website_sales_view"
         android:textColor="@color/shopColour"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -65,27 +250,97 @@
         app:layout_constraintTop_toBottomOf="@+id/cashView" />
 
     <TextView
-        android:id="@+id/garyAmountView"
-        android:layout_width="114dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="56dp"
+        android:id="@+id/garySignView"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="60dp"
         android:ems="15"
-        android:text="€"
+        android:text="@string/euro_sign"
         android:textColor="@color/logoYellow"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/garyView"
-        app:layout_constraintTop_toBottomOf="@+id/cashAmountView" />
+        app:layout_constraintTop_toBottomOf="@+id/cashSignView" />
+
+    <TextView
+        android:id="@+id/garyAmountTodayView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/garySignView"
+        app:layout_constraintTop_toBottomOf="@+id/cashAmountTodayView" />
+
+    <TextView
+        android:id="@+id/garySign2View"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="@string/euro_sign"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/garyAmountTodayView"
+        app:layout_constraintTop_toBottomOf="@+id/cashSign2View" />
+
+    <TextView
+        android:id="@+id/garyAmountMonthView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/garySign2View"
+        app:layout_constraintTop_toBottomOf="@+id/cashAmountMonthView" />
+
+    <TextView
+        android:id="@+id/garySign3View"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="@string/euro_sign"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/garyAmountMonthView"
+        app:layout_constraintTop_toBottomOf="@+id/cashSign3View" />
+
+    <TextView
+        android:id="@+id/garyAmountYearView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/garySign3View"
+        app:layout_constraintTop_toBottomOf="@+id/cashAmountYearView" />
 
     <TextView
         android:id="@+id/justEatView"
         android:layout_width="242dp"
         android:layout_height="35dp"
-        android:layout_marginStart="404dp"
+        android:layout_marginStart="22dp"
         android:layout_marginTop="60dp"
         android:ems="15"
-        android:text="Just Eat Sales"
+        android:text="@string/just_eat_sales_view"
         android:textColor="@color/shopColour"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -93,27 +348,97 @@
         app:layout_constraintTop_toBottomOf="@+id/garyView" />
 
     <TextView
-        android:id="@+id/justEatAmountView"
-        android:layout_width="114dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="56dp"
+        android:id="@+id/justEatSignView"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="210dp"
         android:layout_marginTop="60dp"
         android:ems="15"
-        android:text="€"
+        android:text="@string/euro_sign"
         android:textColor="@color/logoYellow"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/justEatView"
-        app:layout_constraintTop_toBottomOf="@+id/garyAmountView" />
+        app:layout_constraintTop_toBottomOf="@+id/garySignView" />
+
+    <TextView
+        android:id="@+id/justEatAmountTodayView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/justEatSignView"
+        app:layout_constraintTop_toBottomOf="@+id/garyAmountTodayView" />
+
+    <TextView
+        android:id="@+id/justEatSign2View"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="@string/euro_sign"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/justEatAmountTodayView"
+        app:layout_constraintTop_toBottomOf="@+id/garySign2View" />
+
+    <TextView
+        android:id="@+id/justEatAmountMonthView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/justEatSign2View"
+        app:layout_constraintTop_toBottomOf="@+id/garyAmountMonthView" />
+
+    <TextView
+        android:id="@+id/justEatSign3View"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="@string/euro_sign"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/justEatAmountMonthView"
+        app:layout_constraintTop_toBottomOf="@+id/garySign3View" />
+
+    <TextView
+        android:id="@+id/justEatAmountYearView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/justEatSign3View"
+        app:layout_constraintTop_toBottomOf="@+id/garyAmountYearView" />
 
     <TextView
         android:id="@+id/deliverooView"
         android:layout_width="242dp"
         android:layout_height="35dp"
-        android:layout_marginStart="404dp"
+        android:layout_marginStart="22dp"
         android:layout_marginTop="60dp"
         android:ems="15"
-        android:text="Deliveroo Sales"
+        android:text="@string/deliveroo_sales_view"
         android:textColor="@color/shopColour"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -121,27 +446,97 @@
         app:layout_constraintTop_toBottomOf="@+id/justEatView" />
 
     <TextView
-        android:id="@+id/deliverooAmountView"
-        android:layout_width="114dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="56dp"
+        android:id="@+id/deliverooSignView"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="210dp"
         android:layout_marginTop="60dp"
         android:ems="15"
-        android:text="€"
+        android:text="@string/euro_sign"
         android:textColor="@color/logoYellow"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/deliverooView"
-        app:layout_constraintTop_toBottomOf="@+id/justEatAmountView" />
+        app:layout_constraintTop_toBottomOf="@+id/justEatSignView" />
+
+    <TextView
+        android:id="@+id/deliverooAmountTodayView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/deliverooSignView"
+        app:layout_constraintTop_toBottomOf="@+id/justEatAmountTodayView" />
+
+    <TextView
+        android:id="@+id/deliverooSign2View"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="@string/euro_sign"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/deliverooAmountTodayView"
+        app:layout_constraintTop_toBottomOf="@+id/justEatSign2View" />
+
+    <TextView
+        android:id="@+id/deliverooAmountMonthView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/deliverooSign2View"
+        app:layout_constraintTop_toBottomOf="@+id/justEatAmountMonthView" />
+
+    <TextView
+        android:id="@+id/deliverooSign3View"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="@string/euro_sign"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/deliverooAmountMonthView"
+        app:layout_constraintTop_toBottomOf="@+id/justEatSign3View" />
+
+    <TextView
+        android:id="@+id/deliverooAmountYearView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/deliverooSign3View"
+        app:layout_constraintTop_toBottomOf="@+id/justEatAmountYearView" />
 
     <TextView
         android:id="@+id/visaView"
         android:layout_width="242dp"
         android:layout_height="35dp"
-        android:layout_marginStart="404dp"
+        android:layout_marginStart="22dp"
         android:layout_marginTop="60dp"
         android:ems="15"
-        android:text="Visa Sales"
+        android:text="@string/visa_sales_view"
         android:textColor="@color/shopColour"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -149,17 +544,238 @@
         app:layout_constraintTop_toBottomOf="@+id/deliverooView" />
 
     <TextView
-        android:id="@+id/visaAmountView"
-        android:layout_width="114dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="56dp"
+        android:id="@+id/visaSignView"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="210dp"
         android:layout_marginTop="60dp"
         android:ems="15"
-        android:text="€"
+        android:text="@string/euro_sign"
         android:textColor="@color/logoYellow"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/visaView"
         app:layout_constraintTop_toBottomOf="@+id/deliverooView" />
+
+    <TextView
+        android:id="@+id/visaAmountDayView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/visaSignView"
+        app:layout_constraintTop_toBottomOf="@+id/deliverooAmountTodayView" />
+
+    <TextView
+        android:id="@+id/visaSign2View"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="@string/euro_sign"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/visaAmountDayView"
+        app:layout_constraintTop_toBottomOf="@+id/deliverooSign2View" />
+
+    <TextView
+        android:id="@+id/visaAmountMonthView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/visaSign2View"
+        app:layout_constraintTop_toBottomOf="@+id/deliverooAmountMonthView" />
+
+    <TextView
+        android:id="@+id/visaSign3View"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text="@string/euro_sign"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/visaAmountMonthView"
+        app:layout_constraintTop_toBottomOf="@+id/deliverooSign3View" />
+
+    <TextView
+        android:id="@+id/visaAmountYearView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/visaSign3View"
+        app:layout_constraintTop_toBottomOf="@+id/deliverooAmountYearView" />
+
+    <TextView
+        android:id="@+id/totalView"
+        android:layout_width="242dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="110dp"
+        android:ems="15"
+        android:text="@string/total_sales_view"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/visaView" />
+
+    <TextView
+        android:id="@+id/totalSignView"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="110dp"
+        android:ems="15"
+        android:text="@string/euro_sign"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/totalView"
+        app:layout_constraintTop_toBottomOf="@+id/visaSignView" />
+
+    <TextView
+        android:id="@+id/totalAmountDayView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="112dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/moneyGreen"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/totalSignView"
+        app:layout_constraintTop_toBottomOf="@+id/visaAmountDayView" />
+
+    <TextView
+        android:id="@+id/totalSign2View"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="110dp"
+        android:ems="15"
+        android:text="@string/euro_sign"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/totalAmountDayView"
+        app:layout_constraintTop_toBottomOf="@+id/visaSign2View" />
+
+    <TextView
+        android:id="@+id/totalAmountMonthView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="112dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/moneyGreen"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/totalSign2View"
+        app:layout_constraintTop_toBottomOf="@+id/visaAmountMonthView" />
+
+    <TextView
+        android:id="@+id/totalAmountDayPercentView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/totalAmountMonthView"
+        app:layout_constraintStart_toEndOf="@+id/totalAmountMonthView"
+        app:layout_constraintTop_toTopOf="@+id/totalAmountMonthView" />
+
+    <TextView
+        android:id="@+id/totalAmountDayMoneyView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/totalAmountMonthView"
+        app:layout_constraintStart_toStartOf="@+id/totalAmountMonthView"
+        app:layout_constraintTop_toBottomOf="@+id/totalAmountMonthView" />
+
+    <TextView
+        android:id="@+id/totalSign3View"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="110dp"
+        android:ems="15"
+        android:text="@string/euro_sign"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/totalAmountMonthView"
+        app:layout_constraintTop_toBottomOf="@+id/visaSign3View" />
+
+    <TextView
+        android:id="@+id/totalAmountYearView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="110dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/moneyGreen"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/totalSign3View"
+        app:layout_constraintTop_toBottomOf="@+id/visaAmountYearView" />
+
+    <TextView
+        android:id="@+id/totalAmountYearPercentView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/totalAmountYearView"
+        app:layout_constraintStart_toEndOf="@+id/totalAmountYearView"
+        app:layout_constraintTop_toTopOf="@+id/totalAmountYearView" />
+
+    <TextView
+        android:id="@+id/totalAmountYearMoneyView"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:ems="15"
+        android:text=""
+        android:textColor="@color/shopColour"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/totalAmountYearView"
+        app:layout_constraintStart_toStartOf="@+id/totalAmountYearView"
+        app:layout_constraintTop_toBottomOf="@+id/totalAmountYearView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

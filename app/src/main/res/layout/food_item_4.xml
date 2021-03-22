@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="2dp"
-            android:text="Coliemore Harbour Pizza"
+            android:text="@string/coliemore_harbour_pizza"
             android:textColor="@color/shopColour"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -32,11 +32,10 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/productPriceView4"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginTop="1dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/productNameView4"
-            android:text="12"
+            android:text="@string/_12"
             android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -47,11 +46,10 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/productQuantityView4"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="2dp"
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="1dp"
             android:layout_toEndOf="@+id/productQuantityView4"
-            android:text="inch"
+            android:text="@string/inch"
             android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -61,10 +59,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:layout_marginLeft="2dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/productQuantitySizeView4"
-            android:text="€"
+            android:text="@string/euro_sign"
             android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -75,11 +72,10 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/productQuantityCostView4"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="2dp"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/productQuantityCostView4"
-            android:text="14.5"
+            android:text="@string/placeholderCost"
             android:textColor="@color/logoYellow"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -92,9 +88,9 @@
             android:layout_alignStart="@+id/productNameView4"
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
-            android:text="Take and Bake Quality Pizza Making at"
+            android:text="@string/placeholder_additional_info"
             android:textColor="@color/logoYellow"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -105,9 +101,9 @@
             android:layout_alignStart="@+id/topping1View4"
             android:layout_marginStart="0dp"
             android:layout_marginTop="12dp"
-            android:text="Aubergine"
+            android:text="@string/placeholder_topping"
             android:textColor="@color/logoYellow"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -118,9 +114,9 @@
             android:layout_alignStart="@+id/topping2View4"
             android:layout_marginStart="0dp"
             android:layout_marginTop="12dp"
-            android:text="Smoked Applewood"
+            android:text="@string/placeholder_topping_2"
             android:textColor="@color/logoYellow"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -131,9 +127,9 @@
             android:layout_alignStart="@+id/topping3View4"
             android:layout_marginStart="0dp"
             android:layout_marginTop="12dp"
-            android:text="Semi Dried Tomatos"
+            android:text="@string/placeholder_topping_3"
             android:textColor="@color/logoYellow"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
     </RelativeLayout>

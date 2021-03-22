@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainBody.dashboard.ViewIndividualSalesActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/printButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/pizza_button3"
+        android:text="@string/print_sales_today_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/percentagesButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/pizaa_button3"
+        android:text="@string/percentages_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/printButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/itemsButton"
+        android:layout_width="132dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/pizaa_button2"
+        android:text="@string/total_sales_sheet_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/percentagesButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/salesToday"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="480dp"
+        android:layout_marginTop="36dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="@string/sales_today_view"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/salesTodayDate"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="480dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="@string/placeholder_date"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salesToday" />
+
+    <TextView
+        android:id="@+id/salesMonth"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="36dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="@string/sales_month_view"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/salesToday"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/salesMonthDate"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="0dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="@string/placeholder_date"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/salesTodayDate"
+        app:layout_constraintTop_toBottomOf="@+id/salesMonth" />
+
+    <TextView
+        android:id="@+id/salesYear"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="36dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="@string/sales_year_view"
+        android:textColor="@color/shopColour"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/salesMonth"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/salesYearDate"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:ems="15"
+        android:gravity="center"
+        android:text="@string/placeholder_date"
+        android:textColor="@color/logoYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/salesMonthDate"
+        app:layout_constraintTop_toBottomOf="@+id/salesYear" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="1050dp"
+        android:layout_height="687dp"
+        android:clipToPadding="false"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salesTodayDate"
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/activity_individual_sale_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

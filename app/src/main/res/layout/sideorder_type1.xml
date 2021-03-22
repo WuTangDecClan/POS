@@ -21,7 +21,7 @@
             android:layout_width="247dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="2dp"
-            android:text="BBQ Chicken Wings"
+            android:text="@string/bbq_chicken_wings"
             android:textColor="@color/shopColour"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -31,10 +31,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginLeft="2dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/sideNameView"
-            android:text="€"
+            android:text="@string/euro_sign"
             android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -45,11 +44,10 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/sideNameView"
             android:layout_marginStart="15dp"
-            android:layout_marginLeft="2dp"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/euroSignView"
-            android:text="4.5"
+            android:text="@string/four_fifty"
             android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />

@@ -20,9 +20,9 @@ class CustomerActivity : AppCompatActivity() {
     }
 
     /* Function to search the Database. */
-    private fun searchDatabase(query: String) {
-        val searchQuery = "%$query%"
-    }
+  //  private fun searchDatabase(query: String) {
+    //    //val searchQuery = "%$query%"
+    //}
 
     /* Printing onStart() to Logcat. */
     override fun onStart() {

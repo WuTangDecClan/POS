@@ -29,7 +29,7 @@
         android:layout_height="68dp"
         android:layout_marginTop="88dp"
         android:background="@drawable/pizaa_button2"
-        android:text="Main Menu"
+        android:text="@string/main_menu_text"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"

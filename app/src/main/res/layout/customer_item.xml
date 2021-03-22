@@ -33,7 +33,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="6dp"
                 android:layout_marginEnd="0dp"
-                android:text="Declan Thorne"
+                android:text="@string/placeholderName"
                 android:textColor="@color/shopColour"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -48,7 +48,7 @@
                 android:layout_marginTop="1dp"
                 android:layout_marginEnd="100dp"
                 android:layout_toEndOf="@+id/nameView"
-                android:text="089 215 2434"
+                android:text="@string/placeholderMobile"
                 android:textColor="@color/shopColour"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -65,7 +65,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="1dp"
                 android:layout_toEndOf="@+id/nameView"
-                android:text="A96 K4D8"
+                android:text="@string/placeholderEircode"
                 android:textColor="@color/logoYellow"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -80,7 +80,7 @@
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="6dp"
-                android:text="123 Fakelands,\nHigher up Road,\nDublin"
+                android:text="@string/placeholderAddress"
                 android:textColor="@color/logoYellow"
                 android:textSize="20sp"
                 android:textStyle="bold" />

@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rowConstraintLayout"
-    android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:padding="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:padding="16dp"
-        android:layout_margin="4dp"
-        app:cardElevation="10dp"
-        app:cardCornerRadius="8dp"
-        app:cardPreventCornerOverlap="false">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:layout_width="800dp"
@@ -31,7 +29,7 @@
                 android:layout_width="243dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="100dp"
-                android:text="Declan Thorne"
+                android:text="@string/placeholderName"
                 android:textColor="@color/shopColour"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -46,7 +44,7 @@
                 android:layout_marginTop="1dp"
                 android:layout_marginEnd="100dp"
                 android:layout_toEndOf="@+id/nameView"
-                android:text="089 215 2434"
+                android:text="@string/placeholderMobile"
                 android:textColor="@color/shopColour"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -61,7 +59,7 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="1dp"
                 android:layout_toEndOf="@+id/mobileView"
-                android:text="A96 K4D8"
+                android:text="@string/placeholderEircode"
                 android:textColor="@color/logoYellow"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -75,7 +73,7 @@
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="6dp"
-                android:text="123 Fakelands,\nHigher up Road,\nDublin"
+                android:text="@string/placeholderAddress"
                 android:textColor="@color/logoYellow"
                 android:textSize="20sp"
                 android:textStyle="bold" />

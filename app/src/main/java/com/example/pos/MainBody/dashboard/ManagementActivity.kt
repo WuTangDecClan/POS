@@ -20,7 +20,7 @@ class ManagementActivity : AppCompatActivity() {
 
         userDetails.text = "User ID :: $userId"
         userDetails.text = "$emailId"
-
+        /* To reformat code: ALT + CTRL + L */
         garysImageView.setOnClickListener {
             val intent = Intent(this@ManagementActivity, Dashboard::class.java)  /* Creating an Intent to go to Dashboard. */
             startActivity(intent) /* Starting Activity. */
@@ -33,7 +33,7 @@ class ManagementActivity : AppCompatActivity() {
         }
 
         endDayButton.setOnClickListener {
-            val intent = Intent(this@ManagementActivity, Dashboard::class.java)  /* Creating an Intent to go to Dashboard. */
+            val intent = Intent(this@ManagementActivity, ViewIndividualSalesActivity::class.java)  /* Creating an Intent to go to Dashboard. */
             startActivity(intent) /* Starting Activity. */
 
         }

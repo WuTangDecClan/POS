@@ -27,6 +27,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            multiDexKeepFile file('multidex-config.txt')
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -101,4 +102,7 @@ dependencies {
 
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation "androidx.cardview:cardview:1.0.0"
+
+    implementation 'com.github.mazenrashed:Printooth:1.2.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

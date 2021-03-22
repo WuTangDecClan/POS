@@ -30,7 +30,7 @@
         android:layout_marginEnd="268dp"
         android:layout_marginBottom="60dp"
         android:background="@drawable/pizaa_button2"
-        android:text="Add Customer"
+        android:text="@string/add_customer_button"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -52,7 +52,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:queryHint="Search for a Customer" />
-
+        app:queryHint="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

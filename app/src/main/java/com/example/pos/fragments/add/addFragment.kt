@@ -39,7 +39,6 @@ class addFragment : Fragment() {
         /* Creates ViewModelProvider. This will create ViewModels and retain them in a store of the given ViewModelStoreOwner. */
         _posViewModel = ViewModelProvider(this).get(POSViewModel::class.java)
 
-
         database = FirebaseDatabase.getInstance("https://pos-system-317c9-default-rtdb.europe-west1.firebasedatabase.app/")
         reference = database.getReference("Users")
 

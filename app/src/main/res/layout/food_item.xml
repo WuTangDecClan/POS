@@ -23,7 +23,7 @@
             android:layout_alignParentStart="true"
             android:layout_marginStart="6dp"
             android:layout_marginEnd="2dp"
-            android:text="Coliemore Harbour Pizza"
+            android:text="@string/coliemore_harbour_pizza"
             android:textColor="@color/shopColour"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -35,10 +35,9 @@
             android:layout_below="@+id/productNameView"
             android:layout_alignParentStart="true"
             android:layout_marginStart="24dp"
-            android:layout_marginLeft="2dp"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="2dp"
-            android:text="12"
+            android:text="@string/_12"
             android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -49,11 +48,10 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/productQuantityView"
             android:layout_marginStart="4dp"
-            android:layout_marginLeft="0dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="1dp"
             android:layout_toEndOf="@+id/productQuantityView"
-            android:text="inch"
+            android:text="@string/inch"
             android:textColor="@color/logoYellow"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -63,10 +61,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="203dp"
-            android:layout_marginLeft="2dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/productQuantitySizeView"
-            android:text="€"
+            android:text="@string/euro_sign"
             android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -77,12 +74,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="7dp"
-            android:layout_marginLeft="2dp"
             android:layout_marginEnd="16dp"
             android:layout_toEndOf="@+id/productQuantityCostView"
-            android:text="14.50"
+            android:text="@string/placeholderCost"
             android:textColor="@color/logoYellow"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </RelativeLayout>

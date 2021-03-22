@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardViewItem1"
     android:layout_width="400dp"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp"
     android:layout_margin="4dp"
-    app:cardElevation="10dp"
+    android:padding="10dp"
     app:cardCornerRadius="8dp"
+    app:cardElevation="10dp"
     app:cardPreventCornerOverlap="false">
 
     <RelativeLayout
@@ -23,7 +22,7 @@
             android:layout_alignParentStart="true"
             android:layout_marginStart="6dp"
             android:layout_marginEnd="2dp"
-            android:text="Open Food Description"
+            android:text="@string/open_food_description"
             android:textColor="@color/shopColour"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -34,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="51dp"
             android:layout_toEndOf="@+id/openFoodView"
-            android:text="€"
+            android:text="@string/euro_sign"
             android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -47,14 +46,13 @@
             android:layout_alignBottom="@+id/euroView"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="2dp"
             android:layout_marginTop="-2dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="1dp"
             android:layout_toEndOf="@+id/euroView"
-            android:text="2.50"
+            android:text="@string/two_euro_fifty"
             android:textColor="@color/logoYellow"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </RelativeLayout>

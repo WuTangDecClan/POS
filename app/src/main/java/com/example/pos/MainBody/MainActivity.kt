@@ -10,10 +10,9 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.pos.MainBody.dashboard.Dashboard
-import com.example.pos.MainBody.dashboard.OrderActivity
-import com.example.pos.MainBody.registration.LoginActivity
 import com.example.pos.R
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

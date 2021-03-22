@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardViewItem1"
     android:layout_width="400dp"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp"
     android:layout_margin="4dp"
-    app:cardElevation="10dp"
+    android:padding="10dp"
     app:cardCornerRadius="8dp"
+    app:cardElevation="10dp"
     app:cardPreventCornerOverlap="false">
 
     <RelativeLayout
@@ -21,7 +20,7 @@
             android:layout_width="247dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="2dp"
-            android:text="BBQ Chicken Wings"
+            android:text="@string/bbq_chicken_wings"
             android:textColor="@color/shopColour"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -31,10 +30,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
-            android:layout_marginLeft="2dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/sideNameView2"
-            android:text="€"
+            android:text="@string/euro_sign"
             android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -45,11 +43,10 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/sideNameView2"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="2dp"
             android:layout_marginTop="1dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/euroSignView2"
-            android:text="14.5"
+            android:text="@string/_14_5"
             android:textColor="@color/logoYellow"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -62,9 +59,9 @@
             android:layout_alignStart="@+id/sideNameView2"
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
-            android:text="Take and Bake Quality Pizza Making at"
+            android:text="@string/placeholder_additional_info"
             android:textColor="@color/logoYellow"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -75,9 +72,9 @@
             android:layout_alignStart="@+id/topping1View2"
             android:layout_marginStart="0dp"
             android:layout_marginTop="12dp"
-            android:text="Aubergine"
+            android:text="@string/placeholder_topping"
             android:textColor="@color/logoYellow"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
     </RelativeLayout>

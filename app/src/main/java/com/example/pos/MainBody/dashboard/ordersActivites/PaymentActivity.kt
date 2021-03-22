@@ -1,5 +1,6 @@
 package com.example.pos.MainBody.dashboard.ordersActivites
 
+import android.app.Activity
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,18 +14,28 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.mazenrashed.printooth.Printooth
+import com.mazenrashed.printooth.data.printable.Printable
+import com.mazenrashed.printooth.data.printable.RawPrintable
+import com.mazenrashed.printooth.data.printable.TextPrintable
+import com.mazenrashed.printooth.data.printer.DefaultPrinter
+import com.mazenrashed.printooth.ui.ScanningActivity
+import com.mazenrashed.printooth.utilities.Printing
+import com.mazenrashed.printooth.utilities.PrintingCallback
 import kotlinx.android.synthetic.main.activity_payment.*
 import java.util.*
 
 const val PAYMENT = 22
 
-class PaymentActivity : AppCompatActivity() {
+class PaymentActivity : AppCompatActivity(), PrintingCallback {
 
     private lateinit var database: FirebaseDatabase
     private lateinit var reference: DatabaseReference
 
     /* Access a Cloud Firestore instance from the Activity. */
     val db = Firebase.firestore
+
+    internal var printing: Printing?=null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,9 +67,9 @@ class PaymentActivity : AppCompatActivity() {
             // Set the alert dialog title
             builder.setTitle("Complete Order")
             // Display a message on alert dialog
-            builder.setMessage("Are you sure you want to complete this order?")
+            builder.setMessage("Are you sure you want to complete this order? ")
             // Set a positive button and its click listener on alert dialog
-            builder.setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
+            builder.setPositiveButton("Yes") { _: DialogInterface, _: Int ->
                 val c = Calendar.getInstance()
 
                 val year = c.get(Calendar.YEAR)
@@ -72,19 +83,11 @@ class PaymentActivity : AppCompatActivity() {
                 val totalpaid: Double = total.toDouble()
 
                 /* Creating a new Order.  */
-                val order = hashMapOf(
-                    "customer Name" to customerName,
-                    "customer Number" to customerNumber,
-                    "eircode" to customerPostal,
-                    "address" to customerAddress,
-                    "payment Total" to total,
-                    "payment Amount" to type,
-                    "Date of Order" to time
-                )
+                val order = hashMapOf("customer Name" to customerName, "customer Number" to customerNumber, "eircode" to customerPostal, "address" to customerAddress, "payment Total" to total, "payment Amount" to type, "Date of Order" to time)
 
                 val custNam = customerName.replace(" ","")
                 val custNum = customerNumber.replace(" ","")
-                db.collection("Orders - 19.3.2021").document("$custNam$custNum").set(order)
+                db.collection("Orders - $day.$month.$year").document("$custNam$custNum").set(order)
 
                 val docRef =  db.collection("Total Sales").document("$day.$month.$year")
                 docRef.get()
@@ -102,14 +105,8 @@ class PaymentActivity : AppCompatActivity() {
                                 docRef.update("Sales Visa", FieldValue.increment(totalpaid))
                         } else {
                             /* Creating a new Order.  */
-                            val sales = hashMapOf(
-                                "Sales Cash" to 0.0,
-                                "Sales Just Eat" to 0.0,
-                                "Sales Deliveroo" to 0.0,
-                                "Sales Gary's Gourmet Website" to 0.0,
-                                "Sales Visa" to 0.0)
+                            val sales = hashMapOf("Sales Cash" to 0.0, "Sales Just Eat" to 0.0, "Sales Deliveroo" to 0.0, "Sales Gary's Gourmet Website" to 0.0, "Sales Visa" to 0.0)
                             db.collection("Total Sales").document("$day.$month.$year").set(sales)
-
                             if (type == "Cash")
                                 docRef.update("Sales Cash", FieldValue.increment(totalpaid))
                             else if (type == "Just Eat")
@@ -123,12 +120,13 @@ class PaymentActivity : AppCompatActivity() {
                         }
                     }
 
+                //initView()
                 val intent = Intent()  /* Creating an Intent. */
                 setResult(PAYMENT, intent) /* Setting the Result to pass the OK (-1) Result and including the intent with its data. */
                 finish() /* Ending the  Activity. */
             }
             // Display a negative button on alert dialog
-            builder.setNegativeButton("No") { dialogInterface: DialogInterface, i: Int ->
+            builder.setNegativeButton("No") { _: DialogInterface, _: Int ->
 
             }
             builder.show()
@@ -166,5 +164,68 @@ class PaymentActivity : AppCompatActivity() {
         collection_btn.setOnClickListener {
             orderMethodType.text = collection_btn.tag.toString()
         }
+    }
+
+    private fun initView() {
+        if(printing != null)
+            printing!!.printingCallback = this
+
+        printOrder()
+
+    }
+
+    private fun printOrder() {
+        val print = ArrayList<Printable>()
+        print.add(RawPrintable.Builder(byteArrayOf(27,100,4)).build())
+
+        print.add(TextPrintable.Builder()
+            .setText("Order 001")
+            .setCharacterCode(DefaultPrinter.CHARCODE_PC1252)
+            .setNewLinesAfter(1)
+            .build())
+
+        print.add(TextPrintable.Builder()
+            .setText("$paymentType.text.toString()")
+            .setLineSpacing(DefaultPrinter.LINE_SPACING_60)
+            .setAlignment(DefaultPrinter.ALIGNMENT_CENTER)
+            .setEmphasizedMode(DefaultPrinter.EMPHASIZED_MODE_BOLD)
+            .setUnderlined(DefaultPrinter.UNDERLINED_MODE_ON)
+            .setNewLinesAfter(1)
+            .build())
+
+        printing!!.print(print)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == ScanningActivity.SCANNING_FOR_PRINTER && resultCode == Activity.RESULT_OK)
+            initPriniting();
+    }
+
+    private fun initPriniting() {
+        printing = Printooth.printer()
+
+        if (printing != null)
+            printing!!.printingCallback = this
+    }
+
+    override fun connectingWithPrinter() {
+        Toast.makeText(this, "Connecting to the printer...", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun connectionFailed(error: String) {
+        Toast.makeText(this, "Failed to connect...", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onError(error: String) {
+        Toast.makeText(this, "Error Printing...", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onMessage(message: String) {
+        Toast.makeText(this, "Message $message...", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun printingOrderSentSuccessfully() {
+        Toast.makeText(this, "Order successfully Printed...", Toast.LENGTH_SHORT).show()
     }
 }
